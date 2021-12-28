@@ -3,6 +3,7 @@ const traerPeliculas = () =>{
     .then((res) => res.json())
     .then((data) => {
       crearTarjetas(data);
+      entrarAPelicula();
     });
 }
 traerPeliculas()
@@ -16,7 +17,6 @@ const buscarPeliculas = () => {
     .then((data) => {
      console.log(data)
     });
-
 }
 boton.onclick = (event) => {
   event.preventDefault()
@@ -34,4 +34,23 @@ const html = data.items.reduce((acc,pelicula) => {
     );
 },"")
 contenedorPeliculas.innerHTML = html
+}
+
+const entrarAPelicula = () => {
+  const tarjetas = document.querySelectorAll(".tarjeta")
+  for (let i = 0; i < tarjetas.length; i++) {
+    tarjetas[i].onclick = () => {
+      let id = tarjetas[i].dataset.id
+      mostrarPelicula(id)
+    }
+    
+  }
+}
+
+const mostrarPelicula = (id) => {
+  fetch(`https://imdb-api.com/en/API/Title/k_w0x9nsxv/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+    console.log(data)
+    });
 }
