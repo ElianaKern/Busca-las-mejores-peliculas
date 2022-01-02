@@ -1,0 +1,31 @@
+.container-peliculas{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.tarjeta{
+    @include flex();
+    width: 260px;
+    height: 430px;
+    background-color:transparent; 
+    //box-shadow: rgb(243, 112, 112) 0px 4px 16px, rgb(243, 112, 112) 0px 8px 32px;
+    margin: 20px;
+    padding: 3px;
+    //overflow: hidden;
+}
+.img-portada-peliculas{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;   
+}
+.img-portada-peliculas:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+} 
+.titulo{
+    font-size: 25px;
+    margin-bottom: 0px;
+    font-family: $tipografia-principal;
+    color:$color-texto;
+    align-items: center;
+}

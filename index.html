@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <title>Buscador de Peliculas</title>
-</head>
-<body>
-    <input type="text" id="input-buscador">
-    <button class="boton">Enviar</button>
-    <div class="peliculas"></div>
-    
+  </head>
+  <body>
+    <header>
+      <div class="container-titulo-principal">
+        <h1 class="titulo-principal">The Best Movies</h1>
+        <div>
+          <img src="img/claqueta-cine.jpg" alt="" class="img-claqueta-header" />
+          <img src="img/tira.jpg" alt="" class="img-tira-header" />
+        </div>
+      </div>
+    </header>
+    <nav>
+      <label for="input-buscador">Búsqueda</label>
+      <input type="text" id="input-buscador" placeholder="The Godfather" />
+      <button class="button-buscador"><span>Buscar</span></button>
+    </nav>
+    <main>
+      <div class="container-peliculas"></div>
+    </main>
+    <footer>
+      <div class="footer"><h3>Hecho por Eliana Kern</h3></div>
+    </footer>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
