@@ -1,0 +1,80 @@
+nav{
+    width: 80%;
+    display: flex;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    label{
+        margin-right: 20px;
+        font-size: 30px;
+        color:$color-texto;
+        font-weight: bold;
+        font-family: $tipografia-principal;
+    }
+    input{
+        width: 70%;
+        font-size: 22px;  
+        margin-right: 30px; 
+        color: $color-texto;
+        background-color: transparent;
+        border: none;
+        border-bottom: 3px solid black;    
+    }
+    input::placeholder{
+        background-image: url(../../img/camara-negro.png);
+        background-size: 30px 30px;
+        background-repeat: no-repeat;
+        padding-left:50px;
+        color: rgb(34, 31, 31)
+    }
+    .button-buscador{
+        @include color-fondo-principal();
+        @include flex();
+        border: 0;
+        box-sizing: border-box;
+        color:$color-texto;
+        font-size: 25px;
+        font-family:$tipografia-principal;
+        font-weight: bold;
+        cursor: pointer;
+        height: 50px;
+        //letter-spacing: .4px;
+        //line-height: 1;
+        max-width: 100%;
+        padding-left: 25px;
+        padding-right: 25px;
+        text-decoration: none;
+        //user-select: none;
+        //-webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .button-buscador:active {
+        outline: 0;
+    }
+
+    .button-buscador:hover {
+        outline: 0;
+    }
+
+    // .button-buscador span {
+    //     //transition: all 100ms;
+    // }
+
+    .button-buscador:hover span {
+        transform: scale(.9);
+        //opacity: .75;
+    }
+
+    @media screen and (max-width: 991px) {
+    .button-buscador {
+        height: 50px;
+    }
+
+    .button-buscador span {
+        line-height: 50px;
+    }
+    }
+
+}
+
+
