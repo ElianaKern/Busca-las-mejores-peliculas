@@ -4,11 +4,10 @@ nav{
     margin-top: 60px;
     margin-bottom: 30px;
     label{
+        @include tipografiaYColor();
         margin-right: 20px;
         font-size: 30px;
-        color:$color-texto;
         font-weight: bold;
-        font-family: $tipografia-principal;
     }
     input{
         width: 70%;
@@ -31,7 +30,6 @@ nav{
     button{
         @include flexCentradoColumn();
         @include boton();
-        font-family:$tipografia-principal;
         font-weight: bold;
         height: 50px;
         padding-left: 25px;

@@ -1,5 +1,5 @@
 body{
     @include flexCentradoColumn();
-    @include color-fondo-body;
-    font-family: $tipografia-principal;  
+    @include color-fondo-body();
+    @include tipografiaYColor();
 }

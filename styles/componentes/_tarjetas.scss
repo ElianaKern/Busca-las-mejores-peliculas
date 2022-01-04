@@ -21,9 +21,8 @@
     cursor: pointer;
 } 
 .titulo{
+    @include tipografiaYColor();
     font-size: $tamanio-titulos-y-botones;
-    font-family: $tipografia-principal;
-    color:$color-texto;
     margin-bottom: 0px;
    // align-items: center;
 }

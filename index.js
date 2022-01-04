@@ -10,14 +10,16 @@ const botonBuscador = document.querySelector('.button-buscador');
 const contenedorPeliculas = document.querySelector('.container-peliculas'); 
 
 //Paginado
-const botonPrimeraPagina = document.querySelector(".button-primera-pagina")
-const botonPaginaPosterior = document.querySelector('.button-pagina-posterior');
+const botonPaginaInicial = document.querySelector(".button-pagina-inicial")
+const botonPaginaPosterior = document.querySelector('.button-pagina-posterior')
+const iconoPaginaPosterior = document.querySelector('.button-pagina-posterior i');
 const botonPaginaAnterior = document.querySelector(".button-pagina-anterior")
-const botonUltimaPagina = document.querySelector(".button-ultima-pagina")
+const iconoPaginaAnterior = document.querySelector(".button-pagina-anterior i")
+const botonPaginaFinal = document.querySelector(".button-pagina-final")
 
 /// Fetch Inicial ///
 const traerPeliculas = () => {
-  fetch('https://imdb-api.com/en/API/Top250Movies/k_ddwodv5z')
+  fetch('https://imdb-api.com/en/API/Top250Movies/k_w0x9nsxv')
     .then((res) => res.json())
     .then((data) => {
       crearTarjetas(data);
@@ -59,24 +61,32 @@ const crearTarjetas = (data) => {
 };
 
 /// Botones Paginado ///
-botonPrimeraPagina.onclick = () => {
+botonPaginaInicial.onclick = () => {
+  paginaActual = 0
   traerPeliculas();
-  paginaActual = 0;
-};
-botonPaginaPosterior.onclick = () =>{
-  traerPeliculas()
-  paginaActual = paginaActual+12
-  console.log(paginaActual)
 }
 botonPaginaAnterior.onclick = () => {
-
+  if (paginaActual === 0) {
+    iconoPaginaAnterior.style.color = "rgb(85, 80, 80)";
+    prev.disabled = true
+  };
+  paginaActual = paginaActual-12
+  traerPeliculas();
+  console.log(paginaActual)
+  
 }
-botonUltimaPagina.onclick = () =>{
-  traerPeliculas()
-  paginaActual = 240
+botonPaginaPosterior.onclick = () =>{
+  if (paginaActual === 240) {
+    iconoPaginaPosterior.style.color = 'rgb(85, 80, 80)';
+    prev.disabled = true
+  }
+  paginaActual = paginaActual + 12
+  traerPeliculas();
 }
-
-
+botonPaginaFinal.onclick = () => {
+  paginaActual = 240;
+  traerPeliculas();
+};
 
 const entrarAPelicula = () => {
   const tarjetas = document.querySelectorAll('.tarjeta');
@@ -86,8 +96,9 @@ const entrarAPelicula = () => {
       mostrarPelicula(id);
     };
   }
-};
 
+};
+// como muestro la info de las peliculas
 const mostrarPelicula = (id) => {
   fetch(`https://imdb-api.com/es/API/Title/k_w0x9nsxv/${id}`)
     .then((res) => res.json())

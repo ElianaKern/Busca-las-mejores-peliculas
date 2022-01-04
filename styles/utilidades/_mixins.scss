@@ -1,9 +1,9 @@
-@mixin color-fondo() {
-    background-color: rgb(12, 11, 11);
+@mixin color-fondos-principal() {
+    background-color: $background-color-principal-modo-oscuro;//$background-color-principal-modo-claro;
     box-shadow: $box-shadow
 }
 @mixin color-fondo-body() {
-    background-color: rgb(145, 92, 92);
+    background-color: $background-color-body-modo-oscuro;//$background-color-body-modo-claro;
     box-shadow: $box-shadow
 }
 
@@ -21,10 +21,15 @@
 }
 
 @mixin boton() {
-    @include color-fondo();
-    color:$color-texto;
+    @include color-fondos-principal();
+    @include tipografiaYColor();
     font-size: $tamanio-titulos-y-botones;
     cursor: pointer;
     border: none;
     box-sizing: border-box; 
+}
+
+@mixin tipografiaYColor() {
+    font-family: $tipografia-principal;
+    color: $color-texto-modo-oscuro;//$color-texto-modo-claro; 
 }
