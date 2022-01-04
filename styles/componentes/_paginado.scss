@@ -1,4 +1,14 @@
-.button-primera-pagina{
-    font-size: 100px;
-    @include color-fondo-principal();
+section {
+    @include flexCentrado();
+    margin-top: 30px;
+
+    button {
+    @include boton();
+    margin: 20px;
+    padding: 12px;
+    }
+
+    button:hover i {
+    transform: scale(.9);
+    }
 }

@@ -8,19 +8,21 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Saira Condensed", sans-serif;
   background-color: #915c5c;
   box-shadow: rgba(158, 44, 44, 0.17) 0px -23px 25px 0px inset, rgba(158, 44, 44, 0.17) 0px -36px 30px 0px inset, rgba(158, 44, 44, 0.17) 0px -79px 40px 0px inset, rgba(158, 44, 44, 0.17) 0px 2px 1px, rgba(158, 44, 44, 0.17) 0px 4px 2px, rgba(158, 44, 44, 0.17) 0px 8px 4px, rgba(158, 44, 44, 0.17) 0px 16px 8px, rgba(158, 44, 44, 0.17) 0px 32px 16px;
-  font-family: "Saira Condensed", sans-serif;
 }
 
 header {
   width: 100%;
 }
-header .img-claqueta-header, header .img-tira-header {
+
+.img-claqueta-header, .img-tira-header {
   width: auto;
   height: 380px;
 }
-header .container-titulo-principal {
+
+.container-titulo-principal {
   background-color: #0c0b0b;
   box-shadow: rgba(158, 44, 44, 0.17) 0px -23px 25px 0px inset, rgba(158, 44, 44, 0.17) 0px -36px 30px 0px inset, rgba(158, 44, 44, 0.17) 0px -79px 40px 0px inset, rgba(158, 44, 44, 0.17) 0px 2px 1px, rgba(158, 44, 44, 0.17) 0px 4px 2px, rgba(158, 44, 44, 0.17) 0px 8px 4px, rgba(158, 44, 44, 0.17) 0px 16px 8px, rgba(158, 44, 44, 0.17) 0px 32px 16px;
   display: flex;
@@ -28,7 +30,8 @@ header .container-titulo-principal {
   justify-content: center;
   align-items: center;
 }
-header .titulo-principal {
+
+.titulo-principal {
   background-color: #0c0b0b;
   box-shadow: rgba(158, 44, 44, 0.17) 0px -23px 25px 0px inset, rgba(158, 44, 44, 0.17) 0px -36px 30px 0px inset, rgba(158, 44, 44, 0.17) 0px -79px 40px 0px inset, rgba(158, 44, 44, 0.17) 0px 2px 1px, rgba(158, 44, 44, 0.17) 0px 4px 2px, rgba(158, 44, 44, 0.17) 0px 8px 4px, rgba(158, 44, 44, 0.17) 0px 16px 8px, rgba(158, 44, 44, 0.17) 0px 32px 16px;
   color: #fff;
@@ -65,42 +68,57 @@ nav label {
 }
 nav input {
   width: 70%;
-  font-size: 25px;
-  font-family: "Saira Condensed", sans-serif;
-  font-weight: bold;
+  font-size: 22px;
   margin-right: 30px;
-  color: black;
+  color: #fff;
   background-color: transparent;
   border: none;
   border-bottom: 3px solid black;
 }
 nav input::placeholder {
   background-image: url(../../img/camara-negro.png);
-  background-size: 35px 35px;
+  background-size: 30px 30px;
   background-repeat: no-repeat;
   padding-left: 50px;
   color: #221f1f;
 }
-nav button {
+nav .button-buscador {
+  background-color: #0c0b0b;
+  box-shadow: rgba(158, 44, 44, 0.17) 0px -23px 25px 0px inset, rgba(158, 44, 44, 0.17) 0px -36px 30px 0px inset, rgba(158, 44, 44, 0.17) 0px -79px 40px 0px inset, rgba(158, 44, 44, 0.17) 0px 2px 1px, rgba(158, 44, 44, 0.17) 0px 4px 2px, rgba(158, 44, 44, 0.17) 0px 8px 4px, rgba(158, 44, 44, 0.17) 0px 16px 8px, rgba(158, 44, 44, 0.17) 0px 32px 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #0c0b0b;
-  box-shadow: rgba(158, 44, 44, 0.17) 0px -23px 25px 0px inset, rgba(158, 44, 44, 0.17) 0px -36px 30px 0px inset, rgba(158, 44, 44, 0.17) 0px -79px 40px 0px inset, rgba(158, 44, 44, 0.17) 0px 2px 1px, rgba(158, 44, 44, 0.17) 0px 4px 2px, rgba(158, 44, 44, 0.17) 0px 8px 4px, rgba(158, 44, 44, 0.17) 0px 16px 8px, rgba(158, 44, 44, 0.17) 0px 32px 16px;
+  border: 0;
+  box-sizing: border-box;
   color: #fff;
   font-size: 25px;
-  cursor: pointer;
-  border: none;
-  box-sizing: border-box;
   font-family: "Saira Condensed", sans-serif;
   font-weight: bold;
+  cursor: pointer;
   height: 50px;
+  max-width: 100%;
   padding-left: 25px;
   padding-right: 25px;
+  text-decoration: none;
+  touch-action: manipulation;
 }
-nav button:hover span {
+nav .button-buscador:active {
+  outline: 0;
+}
+nav .button-buscador:hover {
+  outline: 0;
+}
+nav .button-buscador:hover span {
   transform: scale(0.9);
+}
+@media screen and (max-width: 991px) {
+  nav .button-buscador {
+    height: 50px;
+  }
+  nav .button-buscador span {
+    line-height: 50px;
+  }
 }
 
 .container-peliculas {
@@ -134,46 +152,32 @@ nav button:hover span {
 
 .titulo {
   font-size: 25px;
+  margin-bottom: 0px;
   font-family: "Saira Condensed", sans-serif;
   color: #fff;
-  margin-bottom: 0px;
+  align-items: center;
 }
 
-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-}
-section button {
+.button-primera-pagina {
+  font-size: 100px;
   background-color: #0c0b0b;
   box-shadow: rgba(158, 44, 44, 0.17) 0px -23px 25px 0px inset, rgba(158, 44, 44, 0.17) 0px -36px 30px 0px inset, rgba(158, 44, 44, 0.17) 0px -79px 40px 0px inset, rgba(158, 44, 44, 0.17) 0px 2px 1px, rgba(158, 44, 44, 0.17) 0px 4px 2px, rgba(158, 44, 44, 0.17) 0px 8px 4px, rgba(158, 44, 44, 0.17) 0px 16px 8px, rgba(158, 44, 44, 0.17) 0px 32px 16px;
-  color: #fff;
-  font-size: 25px;
-  cursor: pointer;
-  border: none;
-  box-sizing: border-box;
-  margin: 20px;
-  padding: 12px;
-}
-section button:hover i {
-  transform: scale(0.9);
 }
 
 footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #0c0b0b;
   box-shadow: rgba(158, 44, 44, 0.17) 0px -23px 25px 0px inset, rgba(158, 44, 44, 0.17) 0px -36px 30px 0px inset, rgba(158, 44, 44, 0.17) 0px -79px 40px 0px inset, rgba(158, 44, 44, 0.17) 0px 2px 1px, rgba(158, 44, 44, 0.17) 0px 4px 2px, rgba(158, 44, 44, 0.17) 0px 8px 4px, rgba(158, 44, 44, 0.17) 0px 16px 8px, rgba(158, 44, 44, 0.17) 0px 32px 16px;
   width: 100%;
   height: 180px;
   margin-top: 40px;
-  margin-bottom: 0px;
 }
-footer div {
+
+.footer {
+  display: flex;
+  justify-content: center;
   color: #fff;
+  font-size: 30px;
   font-family: "Saira Condensed", sans-serif;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=styles.css.map */

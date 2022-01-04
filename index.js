@@ -1,7 +1,7 @@
-//CLAVE PRINCIPAL PARA LLAMADO DE API : k_w0x9nsxv //
-//CLAVES DE REPUESTO : k_ddwodv5z , k_pk8lnjxj //
-/// Elementos del DOM ///
+/// CLAVE PRINCIPAL PARA LLAMADO DE API : k_w0x9nsxv ///
+/// CLAVES DE REPUESTO : k_ddwodv5z , k_pk8lnjxj ///
 
+/// Elementos del DOM ///
 //Busqueda
 const inputBuscador = document.getElementById('input-buscador');
 const botonBuscador = document.querySelector('.button-buscador');
@@ -15,6 +15,7 @@ const botonPaginaPosterior = document.querySelector('.button-pagina-posterior');
 const botonPaginaAnterior = document.querySelector(".button-pagina-anterior")
 const botonUltimaPagina = document.querySelector(".button-ultima-pagina")
 
+/// Fetch Inicial ///
 const traerPeliculas = () => {
   fetch('https://imdb-api.com/en/API/Top250Movies/k_ddwodv5z')
     .then((res) => res.json())
@@ -26,6 +27,7 @@ const traerPeliculas = () => {
 };
 traerPeliculas();
 
+/// Fetch para Buscar Pelicula especifica ///
 const buscarPeliculas = () => {
   fetch(
     `https://imdb-api.com/es/API/SearchMovie/k_w0x9nsxv/${inputBuscador.value}`
@@ -40,6 +42,7 @@ botonBuscador.onclick = (event) => {
   buscarPeliculas();
 };
 
+/// Crear Tarjetas ///
 let paginaActual = 0
 const crearTarjetas = (data) => {
   const arrayRecortado = data.items.slice(paginaActual,paginaActual+12)
@@ -55,7 +58,7 @@ const crearTarjetas = (data) => {
   contenedorPeliculas.innerHTML = html;
 };
 
-
+/// Botones Paginado ///
 botonPrimeraPagina.onclick = () => {
   traerPeliculas();
   paginaActual = 0;

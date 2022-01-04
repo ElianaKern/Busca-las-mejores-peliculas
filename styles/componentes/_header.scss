@@ -1,22 +1,22 @@
 header{
     width: 100%;
-}
-.img-claqueta-header, .img-tira-header{
-    width: auto;
-    height: 380px;
-}
-.container-titulo-principal{
-    @include color-fondo-principal();
-    @include flex();
-}
-.titulo-principal{
-    @include color-fondo-principal();
-    color:$color-texto;
-    font-size:40px;
-    font-family: $tipografia-principal;
-    padding: 40px;
-    margin-bottom: 0px;
-    margin-top: 0px;
+    .img-claqueta-header, .img-tira-header{
+        width: auto;
+        height: 380px;
+    }
+    .container-titulo-principal{
+        @include color-fondo();
+        @include flexCentradoColumn();
+    }
+    .titulo-principal{
+        @include color-fondo();
+        color:$color-texto;
+        font-size:40px;
+        font-family: $tipografia-principal;
+        padding: 40px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
 }
 @media screen and (max-width: 1200px ) {
     .img-tira-header{
