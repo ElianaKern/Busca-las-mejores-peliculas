@@ -4,14 +4,12 @@
     flex-wrap: wrap;
 }
 .tarjeta{
-    @include flex();
+    @include flexCentradoColumn();
     width: 260px;
     height: 430px;
     background-color:transparent; 
-    //box-shadow: rgb(243, 112, 112) 0px 4px 16px, rgb(243, 112, 112) 0px 8px 32px;
     margin: 20px;
     padding: 3px;
-    //overflow: hidden;
 }
 .img-portada-peliculas{
     width: 100%;
@@ -23,9 +21,8 @@
     cursor: pointer;
 } 
 .titulo{
-    font-size: 25px;
+    @include tipografiaYColor();
+    font-size: $tamanio-titulos-y-botones;
     margin-bottom: 0px;
-    font-family: $tipografia-principal;
-    color:$color-texto;
-    align-items: center;
+   // align-items: center;
 }

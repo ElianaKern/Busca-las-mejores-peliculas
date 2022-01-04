@@ -1,13 +1,11 @@
 footer{
-    @include color-fondo-principal();
+    @include flexCentrado();
+    @include color-fondos-principal();
     width: 100%;
     height: 180px;
     margin-top: 40px;
-}
-.footer{
-    display: flex;
-    justify-content: center;
-    color:$color-texto;
-    font-size: 30px;
-    font-family: $tipografia-principal;
+    margin-bottom: 0px;
+    div {
+        @include tipografiaYColor();
+    }
 }
