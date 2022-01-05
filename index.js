@@ -1,5 +1,6 @@
 /// CLAVE PRINCIPAL PARA LLAMADO DE API : k_w0x9nsxv ///
-/// CLAVES DE REPUESTO : k_ddwodv5z , k_pk8lnjxj ///
+/// CLAVES DE REPUESTO SI SE AGOTAN LOS LLAMADOS:
+///    k_ddwodv5z , k_pk8lnjxj , k_58z780e4 ,  k_ruh05m8g , k_rcjxz3o6  ///
 
 /// Elementos del DOM ///
 //Busqueda
@@ -19,12 +20,11 @@ const botonPaginaFinal = document.querySelector(".button-pagina-final")
 
 /// Fetch Inicial ///
 const traerPeliculas = () => {
-  fetch('https://imdb-api.com/en/API/Top250Movies/k_w0x9nsxv')
+  fetch('https://imdb-api.com/en/API/Top250Movies/k_ruh05m8g')
     .then((res) => res.json())
     .then((data) => {
       crearTarjetas(data);
       entrarAPelicula();
-      console.log(data);
     });
 };
 traerPeliculas();
@@ -36,7 +36,7 @@ const buscarPeliculas = () => {
   )
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+    
     });
 };
 botonBuscador.onclick = (event) => {
@@ -72,7 +72,6 @@ botonPaginaAnterior.onclick = () => {
   };
   paginaActual = paginaActual-12
   traerPeliculas();
-  console.log(paginaActual)
   
 }
 botonPaginaPosterior.onclick = () =>{
@@ -93,16 +92,21 @@ const entrarAPelicula = () => {
   for (let i = 0; i < tarjetas.length; i++) {
     tarjetas[i].onclick = () => {
       let id = tarjetas[i].dataset.id;
-      mostrarPelicula(id);
+      llamadoParaMostrarPelicula(id);
     };
   }
-
 };
-// como muestro la info de las peliculas
-const mostrarPelicula = (id) => {
+
+/// Muestro descripcion de pelicula ///
+const llamadoParaMostrarPelicula = (id) => {
   fetch(`https://imdb-api.com/es/API/Title/k_w0x9nsxv/${id}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      console.log(data)
+      mostrarPelicula(data)
     });
 };
+
+const mostrarPelicula = (dataPelicula) => {
+
+}
