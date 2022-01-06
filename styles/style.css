@@ -142,24 +142,40 @@ nav button:hover span {
 }
 
 .descripcion-pelicula {
+  display: "none";
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  display: none;
 }
 .descripcion-pelicula .container-descripcion-pelicula {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .descripcion-pelicula .container-img-pelicula {
-  width: 390px;
-  height: 580px;
+  width: 500px;
+  height: 750px;
   background-color: transparent;
   margin: 20px;
   padding: 5px;
 }
+.descripcion-pelicula .container-img-pelicula .img-descripcion-pelicula {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+.descripcion-pelicula .container-info-pelicula {
+  width: 500px;
+  font-size: 20px;
+  font-family: "Saira Condensed", sans-serif;
+  color: #fff;
+}
+.descripcion-pelicula .container-info-pelicula .titulo {
+  font-size: 40px;
+}
+
 .paginado {
   display: flex;
   justify-content: center;

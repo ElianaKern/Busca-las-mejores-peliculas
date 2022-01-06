@@ -17,10 +17,28 @@ const iconoPaginaPosterior = document.querySelector('.button-pagina-posterior i'
 const botonPaginaAnterior = document.querySelector(".button-pagina-anterior")
 const iconoPaginaAnterior = document.querySelector(".button-pagina-anterior i")
 const botonPaginaFinal = document.querySelector(".button-pagina-final")
+const paginado = document.querySelector(".paginado")
+
+//Seccion Descripcion Pelicula
+const descripcionPelicula = document.querySelector('.descripcion-pelicula');
+const nav = document.querySelector("nav")
+const imgDescripcionPelicula = document.querySelector(
+  '.img-descripcion-pelicula'
+)
+const titulo = document.querySelector(".titulo")
+const anio = document.querySelector('.anio')
+const duracion = document.querySelector('.duracion')
+const genero = document.querySelector('.genero')
+const director = document.querySelector('.director')
+const actores = document.querySelector('.actores')
+const trama = document.querySelector('.trama')
+const premios = document.querySelector('.premios')
+const elenco = document.querySelector(".elenco")
+
 
 /// Fetch Inicial ///
 const traerPeliculas = () => {
-  fetch('https://imdb-api.com/en/API/Top250Movies/k_ruh05m8g')
+  fetch('https://imdb-api.com/en/API/Top250Movies/k_rcjxz3o6')
     .then((res) => res.json())
     .then((data) => {
       crearTarjetas(data);
@@ -86,7 +104,7 @@ botonPaginaFinal.onclick = () => {
   paginaActual = 240;
   traerPeliculas();
 };
-
+/// Entrar a Pelicula
 const entrarAPelicula = () => {
   const tarjetas = document.querySelectorAll('.tarjeta');
   for (let i = 0; i < tarjetas.length; i++) {
@@ -96,7 +114,7 @@ const entrarAPelicula = () => {
     };
   }
 };
-
+entrarAPelicula();
 /// Muestro descripcion de pelicula ///
 const llamadoParaMostrarPelicula = (id) => {
   fetch(`https://imdb-api.com/es/API/Title/k_w0x9nsxv/${id}`)
@@ -108,5 +126,18 @@ const llamadoParaMostrarPelicula = (id) => {
 };
 
 const mostrarPelicula = (dataPelicula) => {
-
+  contenedorPeliculas.style.display = "none"
+  paginado.style.display = "none"
+  nav.style.display = 'none'
+  descripcionPelicula.style.display = "flex"
+  imgDescripcionPelicula.src = dataPelicula.image
+  titulo.textContent = dataPelicula.title
+  anio.textContent = `Año: ${dataPelicula.year}`
+  duracion.textContent = `Duracion: ${dataPelicula.runtimeStr}`
+  genero.textContent = `Género: ${dataPelicula.genres}`
+  director.textContent = `Director: ${dataPelicula.directors}`;
+  actores.textContent = `Actores: ${dataPelicula.stars}`
+  trama.textContent = `Trama: ${dataPelicula.plot}`
+  premios.textContent = `Premios: ${dataPelicula.awards}`
 }
+console.log(imgDescripcionPelicula)
