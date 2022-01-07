@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
@@ -175,7 +176,6 @@ nav button:hover span {
 .descripcion-pelicula .container-info-pelicula .titulo {
   font-size: 40px;
 }
-
 .paginado {
   display: flex;
   justify-content: center;

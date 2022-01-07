@@ -34,11 +34,15 @@ const actores = document.querySelector('.actores')
 const trama = document.querySelector('.trama')
 const premios = document.querySelector('.premios')
 const elenco = document.querySelector(".elenco")
+const elencoPelicula = document.querySelector(".elenco-pelicula") 
+const trailer = document.querySelector(".trailer")
+const salir = document.querySelector(".salir")
+
 
 
 /// Fetch Inicial ///
 const traerPeliculas = () => {
-  fetch('https://imdb-api.com/en/API/Top250Movies/k_rcjxz3o6')
+  fetch('https://imdb-api.com/en/API/Top250Movies/k_ddwodv5z')
     .then((res) => res.json())
     .then((data) => {
       crearTarjetas(data);
@@ -58,9 +62,9 @@ const buscarPeliculas = () => {
     });
 };
 botonBuscador.onclick = (event) => {
-  event.preventDefault();
-  buscarPeliculas();
-};
+  event.preventDefault()
+  buscarPeliculas()
+}
 
 /// Crear Tarjetas ///
 let paginaActual = 0
@@ -75,7 +79,7 @@ const crearTarjetas = (data) => {
       </div>`
     );
   }, '');
-  contenedorPeliculas.innerHTML = html;
+  contenedorPeliculas.innerHTML = html
 };
 
 /// Botones Paginado ///
@@ -104,7 +108,9 @@ botonPaginaFinal.onclick = () => {
   paginaActual = 240;
   traerPeliculas();
 };
-/// Entrar a Pelicula
+
+
+/// Entrar a Pelicula ///
 const entrarAPelicula = () => {
   const tarjetas = document.querySelectorAll('.tarjeta');
   for (let i = 0; i < tarjetas.length; i++) {
@@ -114,21 +120,22 @@ const entrarAPelicula = () => {
     };
   }
 };
-entrarAPelicula();
-/// Muestro descripcion de pelicula ///
+entrarAPelicula()
+
+/// Muestro descripcion de Pelicula ///
 const llamadoParaMostrarPelicula = (id) => {
-  fetch(`https://imdb-api.com/es/API/Title/k_w0x9nsxv/${id}`)
+  fetch(`https://imdb-api.com/es/API/Title/k_ddwodv5z/${id}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data)
-      mostrarPelicula(data)
+      console.log(data);
+      mostrarPelicula(data);
     });
 };
 
 const mostrarPelicula = (dataPelicula) => {
+  nav.style.display = 'none';
   contenedorPeliculas.style.display = "none"
   paginado.style.display = "none"
-  nav.style.display = 'none'
   descripcionPelicula.style.display = "flex"
   imgDescripcionPelicula.src = dataPelicula.image
   titulo.textContent = dataPelicula.title
@@ -139,5 +146,45 @@ const mostrarPelicula = (dataPelicula) => {
   actores.textContent = `Actores: ${dataPelicula.stars}`
   trama.textContent = `Trama: ${dataPelicula.plot}`
   premios.textContent = `Premios: ${dataPelicula.awards}`
+  mostrarElenco()
+  salirDePelicula()
 }
-console.log(imgDescripcionPelicula)
+
+const mostrarElenco = () => {
+  elenco.onclick = () => {
+    descripcionPelicula.style.display = 'none'
+    crearTarjetasElenco()
+  }
+}
+
+const crearTarjetasElenco = (dataPelicula) => {
+  elencoPelicula.display = 'flex'
+  const arrayElenco = dataPelicula.actorlist
+  const htmlElenco = arrayElenco.reduce((acc, curr)=>{
+    return (
+      acc +
+        `<div class="foto-del-actor data-id="${curr.id}">
+          <p class="nombre-del-actor">${curr.name}</p>
+          <img src="${curr.image}" alt="foto del actor/actriz class="img-actor-actriz">
+          <p class="nombre-del-personaje">Personaje : ${curr.asCharacter}</p> 
+        </div> `
+    );
+  },"")
+  elencoPelicula.innerHTML = htmlElenco
+}
+
+/// Boton para salir de Pelicula
+const salirDePelicula = () => {
+  salir.onclick = () => {
+    descripcionPelicula.style.display = 'none'
+    nav.style.display = 'flex'
+    contenedorPeliculas.style.display = 'flex'
+    paginado.style.display = 'flex'
+  }
+}
+
+// const verTrailer = () => {
+//   trailer.onclick = () => {
+//   descripcionPelicula.style.display = 'none'
+//   }
+// }
