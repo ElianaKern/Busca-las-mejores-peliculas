@@ -3,7 +3,10 @@
 ///    k_ddwodv5z , k_pk8lnjxj , k_58z780e4 ,  k_ruh05m8g , k_rcjxz3o6  ///
 
 /// Elementos del DOM ///
-//Busqueda
+//Header
+const imagenesDelHeader = document.querySelector('.imagenes-del-header');
+
+//Nav Busqueda
 const inputBuscador = document.getElementById('input-buscador');
 const botonBuscador = document.querySelector('.button-buscador');
 
@@ -42,7 +45,7 @@ const salir = document.querySelector(".salir")
 
 /// Fetch Inicial ///
 const traerPeliculas = () => {
-  fetch('https://imdb-api.com/en/API/Top250Movies/k_ddwodv5z')
+  fetch('https://imdb-api.com/en/API/Top250Movies/k_w0x9nsxv')
     .then((res) => res.json())
     .then((data) => {
       crearTarjetas(data);
@@ -124,7 +127,7 @@ entrarAPelicula()
 
 /// Muestro descripcion de Pelicula ///
 const llamadoParaMostrarPelicula = (id) => {
-  fetch(`https://imdb-api.com/es/API/Title/k_ddwodv5z/${id}`)
+  fetch(`https://imdb-api.com/es/API/Title/k_w0x9nsxv/${id}`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -146,26 +149,28 @@ const mostrarPelicula = (dataPelicula) => {
   actores.textContent = `Actores: ${dataPelicula.stars}`
   trama.textContent = `Trama: ${dataPelicula.plot}`
   premios.textContent = `Premios: ${dataPelicula.awards}`
-  mostrarElenco()
+  elencoPelicula.style.display ="none"
+  mostrarElenco(dataPelicula)
   salirDePelicula()
 }
 
-const mostrarElenco = () => {
+const mostrarElenco = (dataPelicula) => {
   elenco.onclick = () => {
     descripcionPelicula.style.display = 'none'
-    crearTarjetasElenco()
+    elencoPelicula.style.display = 'flex';
+    crearTarjetasElenco(dataPelicula)
   }
 }
 
 const crearTarjetasElenco = (dataPelicula) => {
   elencoPelicula.display = 'flex'
-  const arrayElenco = dataPelicula.actorlist
+  const arrayElenco = dataPelicula.actorList
   const htmlElenco = arrayElenco.reduce((acc, curr)=>{
     return (
       acc +
         `<div class="foto-del-actor data-id="${curr.id}">
           <p class="nombre-del-actor">${curr.name}</p>
-          <img src="${curr.image}" alt="foto del actor/actriz class="img-actor-actriz">
+          <img src="${curr.image}" alt="foto del actor/actriz" class="img-actor-actriz">
           <p class="nombre-del-personaje">Personaje : ${curr.asCharacter}</p> 
         </div> `
     );
