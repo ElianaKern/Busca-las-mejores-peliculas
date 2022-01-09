@@ -1,0 +1,29 @@
+.elenco-pelicula{
+    @include flexCentrado();
+    flex-wrap: wrap;
+    margin: 100px;
+    .foto-del-actor{
+        width: 200px;
+        height: 300px;
+        background-color:transparent;
+        margin: 50px;
+    }
+    .nombre-del-actor{
+        @include tipografiaYColor();
+        font-weight: bolder;
+        font-size: 25px;
+        margin: 0px;
+    }
+    .img-actor-actriz{
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+    }
+    .nombre-del-personaje{
+        @include tipografiaYColor();
+        font-size: 18px;
+        margin: 0px;
+        line-height: 1;
+    }
+
+}

@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
@@ -16,10 +17,6 @@ body {
 
 header {
   width: 100%;
-}
-header .img-claqueta-header, header .img-tira-header {
-  width: auto;
-  height: 380px;
 }
 header .container-titulo-principal {
   background-color: #0c0b0b;
@@ -38,6 +35,10 @@ header .titulo-principal {
   padding: 40px;
   margin-bottom: 0px;
   margin-top: 0px;
+}
+header .img-claqueta-header, header .img-tira-header {
+  width: auto;
+  height: 380px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -105,18 +106,19 @@ nav button:hover span {
 }
 
 .container-peliculas {
+  display: none;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 80px;
 }
 
 .tarjeta {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  text-align: center;
   width: 260px;
-  height: 430px;
   background-color: transparent;
   margin: 20px;
   padding: 3px;
@@ -137,14 +139,104 @@ nav button:hover span {
   font-family: "Saira Condensed", sans-serif;
   color: #fff;
   font-size: 25px;
-  margin-bottom: 0px;
+  margin: 0px;
+  margin-top: 25px;
+  line-height: 1;
+}
+
+.descripcion-pelicula {
+  display: "none";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  display: none;
+}
+.descripcion-pelicula .container-descripcion-pelicula {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.descripcion-pelicula .container-img-pelicula {
+  width: 500px;
+  background-color: transparent;
+  margin: 40px;
+}
+.descripcion-pelicula .container-img-pelicula .img-descripcion-pelicula {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+.descripcion-pelicula .container-info-pelicula {
+  width: 500px;
+  font-size: 20px;
+  font-family: "Saira Condensed", sans-serif;
+  color: #fff;
+}
+.descripcion-pelicula .container-info-pelicula .titulo {
+  font-size: 40px;
+}
+.descripcion-pelicula .container-info-pelicula button {
+  background-color: #0c0b0b;
+  box-shadow: rgba(158, 44, 44, 0.17) 0px -23px 25px 0px inset, rgba(158, 44, 44, 0.17) 0px -36px 30px 0px inset, rgba(158, 44, 44, 0.17) 0px -79px 40px 0px inset, rgba(158, 44, 44, 0.17) 0px 2px 1px, rgba(158, 44, 44, 0.17) 0px 4px 2px, rgba(158, 44, 44, 0.17) 0px 8px 4px, rgba(158, 44, 44, 0.17) 0px 16px 8px, rgba(158, 44, 44, 0.17) 0px 32px 16px;
+  font-family: "Saira Condensed", sans-serif;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  border: none;
+  box-sizing: border-box;
+  font-weight: bolder;
+  margin: 5px;
+  margin-top: 25px;
+}
+.descripcion-pelicula .container-info-pelicula button:hover p {
+  transform: scale(0.9);
+}
+.descripcion-pelicula .container-info-pelicula p {
+  margin: 0px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.elenco-pelicula {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 100px;
+}
+.elenco-pelicula .foto-del-actor {
+  width: 200px;
+  height: 300px;
+  background-color: transparent;
+  margin: 50px;
+}
+.elenco-pelicula .nombre-del-actor {
+  font-family: "Saira Condensed", sans-serif;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 25px;
+  margin: 0px;
+}
+.elenco-pelicula .img-actor-actriz {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+.elenco-pelicula .nombre-del-personaje {
+  font-family: "Saira Condensed", sans-serif;
+  color: #fff;
+  font-size: 18px;
+  margin: 0px;
+  line-height: 1;
 }
 
 .paginado {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 80px;
 }
 .paginado button {
   background-color: #0c0b0b;

@@ -1,12 +1,13 @@
 .container-peliculas{
+    display: none;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 80px;
 }
 .tarjeta{
-    @include flexCentradoColumn();
+    @include flexColumn();
     width: 260px;
-    height: 430px;
     background-color:transparent; 
     margin: 20px;
     padding: 3px;
@@ -23,6 +24,8 @@
 .titulo{
     @include tipografiaYColor();
     font-size: $tamanio-titulos-y-botones;
-    margin-bottom: 0px;
+    margin: 0px;
+    margin-top: 25px;
+    line-height: 1;
    // align-items: center;
 }

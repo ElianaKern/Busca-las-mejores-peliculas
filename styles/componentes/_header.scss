@@ -1,9 +1,5 @@
 header{
-    width: 100%;
-    .img-claqueta-header, .img-tira-header{
-        width: auto;
-        height: 380px;
-    }
+    width: 100%; 
     .container-titulo-principal{
         @include color-fondos-principal();
         @include flexCentradoColumn();
@@ -15,6 +11,13 @@ header{
         padding: 40px;
         margin-bottom: 0px;
         margin-top: 0px;
+    }
+    // .imagenes-del-header{
+    //     display: flex;///no me funciona
+    // }
+    .img-claqueta-header, .img-tira-header{
+        width: auto;
+        height: 380px;
     }
 }
 @media screen and (max-width: 1200px ) {

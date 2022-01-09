@@ -1,0 +1,45 @@
+.descripcion-pelicula{
+    display:"none";
+    @include flexCentrado();
+    // background-image: url(../../img/tira-header.jpg);//mepa que va con comillas
+    // background-size: 35px 35px; ;
+    // background-repeat: no-repeat;
+    width: 100%;
+    margin-top: 20px;
+    .container-descripcion-pelicula{
+    @include flexCentrado();
+    };
+    .container-img-pelicula{
+        width: 500px;
+        background-color:transparent; 
+        margin: 40px;
+        .img-descripcion-pelicula{
+            width: 100%;
+            height: auto;
+            box-sizing: border-box; 
+        }
+    };
+    .container-info-pelicula{
+        width: 500px;
+        font-size: 20px;
+        @include tipografiaYColor();
+        .titulo{
+            font-size: 40px;
+        }; 
+        button{
+            @include boton(); 
+            font-weight: bolder;
+            margin:5px;
+            margin-top:25px;   
+        };
+        button:hover p{
+            transform: scale(.9);
+        }
+        p{
+        margin:0px;
+        margin-left: 15px;
+        margin-right: 15px;
+        }
+};
+display:none;
+}
