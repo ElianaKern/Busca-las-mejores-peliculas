@@ -139,6 +139,7 @@ const mostrarPelicula = (dataPelicula) => {
   nav.style.display = 'none';
   contenedorPeliculas.style.display = "none"
   paginado.style.display = "none"
+  //imagenesDelHeader.style.display = "none"//ver bien pq me desaparece definitivo
   descripcionPelicula.style.display = "flex"
   imgDescripcionPelicula.src = dataPelicula.image
   titulo.textContent = dataPelicula.title

@@ -5,15 +5,14 @@
     // background-size: 35px 35px; ;
     // background-repeat: no-repeat;
     width: 100%;
+    margin-top: 20px;
     .container-descripcion-pelicula{
     @include flexCentrado();
     };
     .container-img-pelicula{
         width: 500px;
-        height: 800px;
         background-color:transparent; 
-        margin: 20px;
-        padding: 5px;
+        margin: 40px;
         .img-descripcion-pelicula{
             width: 100%;
             height: auto;
@@ -31,13 +30,13 @@
             @include boton(); 
             font-weight: bolder;
             margin:5px;
-            
-              
+            margin-top:25px;   
         };
         button:hover p{
             transform: scale(.9);
         }
         p{
+        margin:0px;
         margin-left: 15px;
         margin-right: 15px;
         }

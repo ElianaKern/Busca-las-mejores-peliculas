@@ -1,6 +1,6 @@
 .paginado {
     @include flexCentrado();
-    margin-top: 30px;
+    margin-top: 80px;
 
     button {
     @include boton();

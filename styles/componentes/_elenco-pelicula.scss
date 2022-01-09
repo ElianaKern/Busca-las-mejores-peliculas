@@ -3,13 +3,10 @@
     flex-wrap: wrap;
     margin: 100px;
     .foto-del-actor{
-        @include flexCentradoColumn();
         width: 200px;
         height: 300px;
         background-color:transparent;
-        margin: 30px;
-        padding: 5px;
-        box-sizing: border-box;
+        margin: 50px;
     }
     .nombre-del-actor{
         @include tipografiaYColor();
@@ -26,6 +23,7 @@
         @include tipografiaYColor();
         font-size: 18px;
         margin: 0px;
+        line-height: 1;
     }
 
 }
