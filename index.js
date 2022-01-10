@@ -45,7 +45,7 @@ const salir = document.querySelector(".salir")
 
 /// Fetch Inicial ///
 const traerPeliculas = () => {
-  fetch('https://imdb-api.com/en/API/Top250Movies/k_w0x9nsxv')
+  fetch('https://imdb-api.com/en/API/Top250Movies/k_ruh05m8g')
     .then((res) => res.json())
     .then((data) => {
       crearTarjetas(data);
@@ -57,12 +57,10 @@ traerPeliculas();
 /// Fetch para Buscar Pelicula especifica ///
 const buscarPeliculas = () => {
   fetch(
-    `https://imdb-api.com/es/API/SearchMovie/k_w0x9nsxv/${inputBuscador.value}`
+    `https://imdb-api.com/es/API/SearchMovie/k_ruh05m8g/${inputBuscador.value}`
   )
     .then((res) => res.json())
-    .then((data) => {
-    
-    });
+    .then((data) => {});
 };
 botonBuscador.onclick = (event) => {
   event.preventDefault()
@@ -127,7 +125,7 @@ entrarAPelicula()
 
 /// Muestro descripcion de Pelicula ///
 const llamadoParaMostrarPelicula = (id) => {
-  fetch(`https://imdb-api.com/es/API/Title/k_w0x9nsxv/${id}`)
+  fetch(`https://imdb-api.com/es/API/Title/k_ruh05m8g/${id}`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
