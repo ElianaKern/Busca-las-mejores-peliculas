@@ -13,28 +13,27 @@ footer{
         margin: 20px;
         padding: 10px;
         font-size: 18px;
-    p{
+        p{
         margin: 0px;
         @include flexCentrado;
-    }
-    a{
+        }
+        a{
         background-color: transparent;
         i{
-        font-size: 30px;
+        font-size: 40px;
         color:white;
-        margin: 10px;
-      
-       
-    }
-    .fa-imdb, .fa-heart{
+        margin: 10px;  
+        }
+        .fa-imdb, .fa-heartbeat{
         font-size: 50px;
+        }
     }
-    }
+
     a:hover i {
     transform: scale(.9);
     }
-    .fa-heart{
-        font-size: 30px;
+    .fa-heartbeat{
+        font-size: 40px;
         color:white;
         margin: 10px;
 
@@ -47,4 +46,10 @@ footer{
 //     background-size: 1200px 200px;
 //     background-repeat:no-repeat;
 // }    
+}
+
+@media screen and(max-width : 700px){
+    footer{
+        @include flexCentradoColumn()
+    }
 }

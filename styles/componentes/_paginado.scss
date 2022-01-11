@@ -3,13 +3,12 @@
     margin-top: 80px;
 
     button {
-    @include boton();
-    font-size: 30px;
-    margin: 20px;
-    padding: 12px;
+        @include boton();
+        font-size: 30px;
+        margin: 20px;
     }
 
     button:hover i {
-    transform: scale(.9);
+        transform: scale(.9);
     }
 }

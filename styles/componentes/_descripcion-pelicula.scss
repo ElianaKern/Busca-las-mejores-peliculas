@@ -30,8 +30,7 @@
         }; 
         button{
             @include boton(); 
-            font-weight: bolder;
-            margin:5px;
+            margin:8px;
             margin-top:25px;   
         };
         button:hover p{
@@ -39,8 +38,7 @@
         }
         p{
         margin:0px;
-        margin-left: 15px;
-        margin-right: 15px;
+
         }
 };
 display:none;

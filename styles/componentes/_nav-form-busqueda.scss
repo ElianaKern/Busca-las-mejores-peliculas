@@ -30,12 +30,7 @@ nav{
     button{
         @include flexCentradoColumn();
         @include boton();
-        font-weight: bold;
-        height: 50px;
-        padding-left: 25px;
-        padding-right: 25px;
     }
-
     button:hover span {
        transform: scale(.9);
     }
