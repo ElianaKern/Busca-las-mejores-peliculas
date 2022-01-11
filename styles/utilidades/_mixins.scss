@@ -31,6 +31,8 @@
     @include color-fondos-principal();
     @include tipografiaYColor();
     font-size: $tamanio-titulos-y-botones;
+    font-weight: bold;
+    padding: 10px;
     cursor: pointer;
     border: none;
     box-sizing: border-box;

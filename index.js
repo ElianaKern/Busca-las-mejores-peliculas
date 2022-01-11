@@ -13,6 +13,11 @@ const botonBuscador = document.querySelector('.button-buscador');
 //Seccion Principal
 const contenedorPeliculas = document.querySelector('.container-peliculas'); 
 
+//Seccion Peliculas de Busqueda
+const contenedorPeliculasDeBusqueda = document.querySelector(
+  '.container-peliculas-de-busqueda'
+);
+
 //Paginado
 const botonPaginaInicial = document.querySelector(".button-pagina-inicial")
 const botonPaginaPosterior = document.querySelector('.button-pagina-posterior')
@@ -71,7 +76,7 @@ botonBuscador.onclick = (event) => {
   buscarPeliculas()
 }
 
-/// Resultado de Busqueda
+/// Resultado de Busqueda ///
 const crearTarjetasBusqueda = (data) => {
   const html = data.results.reduce((acc, pelicula) => {
     return (
@@ -82,8 +87,8 @@ const crearTarjetasBusqueda = (data) => {
       </div>`
     );
   }, '');
-  contenedorPeliculas.innerHTML = html
-
+  contenedorPeliculas.innerHTML = html;
+  paginado.style.display ="none"
 };
 
 /// Crear Tarjetas ///
@@ -100,6 +105,7 @@ const crearTarjetas = (data) => {
     );
   }, '');
   contenedorPeliculas.innerHTML = html
+  //contenedorPeliculasDeBusqueda.style.display ="none"
 };
 
 /// Botones Paginado ///
@@ -171,12 +177,9 @@ const mostrarPelicula = (dataPelicula) => {
   mostrarElenco(dataPelicula)
   salirDePelicula()
 }
-//const seccionModalElenco = document.querySelector(".seccion-modal-elenco");
-//console.log(seccionModalElenco)
+
 const mostrarElenco = (dataPelicula) => {
   elenco.onclick = () => {
-    //seccionModalElenco.classList.toggle('ocultar');
-    //seccionModalElenco.style.display ="flex";
     elencoPelicula.style.display = 'flex';
     descripcionPelicula.style.display = 'none';
     crearTarjetasElenco(dataPelicula)
@@ -196,19 +199,25 @@ const crearTarjetasElenco = (dataPelicula) => {
         </div> `
     );
   },"")
-  elencoPelicula.innerHTML = `${htmlElenco} <button class="volver"><p>Volver</p></button>`;
+  elencoPelicula.innerHTML = `${htmlElenco} <div class="volver-de-elenco"><button class="volver"><p>Volver</p></button></div>`;
+  const botonVolver = document.querySelector(".volver")
+  botonVolver.onclick = () =>{
+    mostrarPelicula(dataPelicula);
+  }
 }
 
-/// Boton para salir de Pelicula
+/// Boton para salir de Pelicula ///
 const salirDePelicula = () => {
   salir.onclick = () => {
     descripcionPelicula.style.display = 'none'
     nav.style.display = 'flex'
     contenedorPeliculas.style.display = 'flex'
     paginado.style.display = 'flex'
+    traerPeliculas();
   }
 }
 
+/// Boton para ver Trailers ///
 // const verTrailer = () => {
 //   trailer.onclick = () => {
 //   descripcionPelicula.style.display = 'none'
