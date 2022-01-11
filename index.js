@@ -171,12 +171,14 @@ const mostrarPelicula = (dataPelicula) => {
   mostrarElenco(dataPelicula)
   salirDePelicula()
 }
-const seccionModalElenco = document.querySelector(".seccion-modal-elenco");
-console.log(seccionModalElenco)
+//const seccionModalElenco = document.querySelector(".seccion-modal-elenco");
+//console.log(seccionModalElenco)
 const mostrarElenco = (dataPelicula) => {
   elenco.onclick = () => {
     //seccionModalElenco.classList.toggle('ocultar');
-    seccionModalElenco.style.display ="flex";
+    //seccionModalElenco.style.display ="flex";
+    elencoPelicula.style.display = 'flex';
+    descripcionPelicula.style.display = 'none';
     crearTarjetasElenco(dataPelicula)
   }
 }
@@ -194,7 +196,7 @@ const crearTarjetasElenco = (dataPelicula) => {
         </div> `
     );
   },"")
-  elencoPelicula.innerHTML = htmlElenco
+  elencoPelicula.innerHTML = `${htmlElenco} <button class="volver"><p>Volver</p></button>`;
 }
 
 /// Boton para salir de Pelicula
