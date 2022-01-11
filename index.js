@@ -45,7 +45,7 @@ const salir = document.querySelector(".salir")
 
 /// Fetch Inicial ///
 const traerPeliculas = () => {
-  fetch('https://imdb-api.com/en/API/Top250Movies/k_ruh05m8g')
+  fetch('https://imdb-api.com/en/API/Top250Movies/k_rcjxz3o6')
     .then((res) => res.json())
     .then((data) => {
       crearTarjetas(data);
@@ -57,15 +57,34 @@ traerPeliculas();
 /// Fetch para Buscar Pelicula especifica ///
 const buscarPeliculas = () => {
   fetch(
-    `https://imdb-api.com/es/API/SearchMovie/k_ruh05m8g/${inputBuscador.value}`
+    `https://imdb-api.com/es/API/SearchMovie/k_rcjxz3o6/${inputBuscador.value}`
   )
     .then((res) => res.json())
-    .then((data) => {});
+    .then((data) => {
+      console.log(data);
+      crearTarjetasBusqueda(data);
+      entrarAPelicula();
+    });
 };
 botonBuscador.onclick = (event) => {
   event.preventDefault()
   buscarPeliculas()
 }
+
+/// Resultado de Busqueda
+const crearTarjetasBusqueda = (data) => {
+  const html = data.results.reduce((acc, pelicula) => {
+    return (
+      acc +
+      `<div class="tarjeta" data-id=${pelicula.id}>
+        <img src="${pelicula.image}" class="img-portada-peliculas">
+        <h1 class="titulo">${pelicula.title}</h1>
+      </div>`
+    );
+  }, '');
+  contenedorPeliculas.innerHTML = html
+
+};
 
 /// Crear Tarjetas ///
 let paginaActual = 0
@@ -125,7 +144,7 @@ entrarAPelicula()
 
 /// Muestro descripcion de Pelicula ///
 const llamadoParaMostrarPelicula = (id) => {
-  fetch(`https://imdb-api.com/es/API/Title/k_ruh05m8g/${id}`)
+  fetch(`https://imdb-api.com/es/API/Title/k_rcjxz3o6/${id}`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -152,11 +171,14 @@ const mostrarPelicula = (dataPelicula) => {
   mostrarElenco(dataPelicula)
   salirDePelicula()
 }
-
+//const seccionModalElenco = document.querySelector(".seccion-modal-elenco");
+//console.log(seccionModalElenco)
 const mostrarElenco = (dataPelicula) => {
   elenco.onclick = () => {
-    descripcionPelicula.style.display = 'none'
+    //seccionModalElenco.classList.toggle('ocultar');
+    //seccionModalElenco.style.display ="flex";
     elencoPelicula.style.display = 'flex';
+    descripcionPelicula.style.display = 'none';
     crearTarjetasElenco(dataPelicula)
   }
 }
@@ -174,7 +196,7 @@ const crearTarjetasElenco = (dataPelicula) => {
         </div> `
     );
   },"")
-  elencoPelicula.innerHTML = htmlElenco
+  elencoPelicula.innerHTML = `${htmlElenco} <button class="volver"><p>Volver</p></button>`;
 }
 
 /// Boton para salir de Pelicula
