@@ -107,7 +107,33 @@ nav button:hover span {
   transform: scale(0.9);
 }
 
-.container-peliculas, .container-peliculas-de-busqueda {
+.salir-de-busqueda {
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+}
+.salir-de-busqueda button {
+  background-color: rgba(12, 11, 11, 0.877);
+  box-shadow: rgba(158, 44, 44, 0.17) 0px -23px 25px 0px inset, rgba(158, 44, 44, 0.17) 0px -36px 30px 0px inset, rgba(158, 44, 44, 0.17) 0px -79px 40px 0px inset, rgba(158, 44, 44, 0.17) 0px 2px 1px, rgba(158, 44, 44, 0.17) 0px 4px 2px, rgba(158, 44, 44, 0.17) 0px 8px 4px, rgba(158, 44, 44, 0.17) 0px 16px 8px, rgba(158, 44, 44, 0.17) 0px 32px 16px;
+  font-family: "Saira Condensed", sans-serif;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  box-sizing: border-box;
+  margin-top: 50px;
+  display: none;
+}
+.salir-de-busqueda p {
+  margin: 0px;
+}
+.salir-de-busqueda button:hover p {
+  transform: scale(0.9);
+}
+
+.container-peliculas {
   display: none;
   display: flex;
   justify-content: center;
@@ -234,12 +260,13 @@ nav button:hover span {
   margin: 0px;
   line-height: 1;
 }
-.elenco-pelicula .volver-de-elenco {
+
+.volver-de-elenco {
   width: 70%;
   display: flex;
   justify-content: flex-end;
 }
-.elenco-pelicula .volver-de-elenco .volver {
+.volver-de-elenco button {
   background-color: rgba(12, 11, 11, 0.877);
   box-shadow: rgba(158, 44, 44, 0.17) 0px -23px 25px 0px inset, rgba(158, 44, 44, 0.17) 0px -36px 30px 0px inset, rgba(158, 44, 44, 0.17) 0px -79px 40px 0px inset, rgba(158, 44, 44, 0.17) 0px 2px 1px, rgba(158, 44, 44, 0.17) 0px 4px 2px, rgba(158, 44, 44, 0.17) 0px 8px 4px, rgba(158, 44, 44, 0.17) 0px 16px 8px, rgba(158, 44, 44, 0.17) 0px 32px 16px;
   font-family: "Saira Condensed", sans-serif;
@@ -251,11 +278,12 @@ nav button:hover span {
   border: none;
   box-sizing: border-box;
   margin-top: 50px;
+  display: none;
 }
-.elenco-pelicula .volver-de-elenco p {
+.volver-de-elenco p {
   margin: 0px;
 }
-.elenco-pelicula .volver-de-elenco .volver:hover p {
+.volver-de-elenco button:hover p {
   transform: scale(0.9);
 }
 

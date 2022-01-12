@@ -24,21 +24,10 @@
         font-size: 18px;
         margin: 0px;
         line-height: 1;
-    }
-    .volver-de-elenco{
-        width: 70%;
-        display: flex;
-        justify-content: flex-end;
-        .volver{
-        @include boton(); 
-        margin-top:50px;  
-        }
-        p{
-            margin: 0px;
-        }
-        .volver:hover p{
-        transform: scale(.9);
-        }
-    }
-
+    }  
 }
+.volver-de-elenco{
+    @include botonSalirYVolver();
+}
+
+
