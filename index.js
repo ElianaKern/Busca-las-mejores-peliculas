@@ -1,7 +1,8 @@
 /// CLAVE PRINCIPAL PARA LLAMADO DE API : k_w0x9nsxv ///
 /// CLAVES DE REPUESTO SI SE AGOTAN LOS LLAMADOS:
-///    k_ddwodv5z , k_pk8lnjxj , k_58z780e4 ,  k_ruh05m8g , k_rcjxz3o6 , k_mmzma8jv ///
+///    k_ddwodv5z , k_pk8lnjxj , k_58z780e4 ,  k_ruh05m8g , k_rcjxz3o6 , k_mmzma8jv , k_sexpb7mq///
 
+const API_KEY = 'k_pk8lnjxj';
 /// Elementos del DOM ///
 //Header
 const imagenesDelHeader = document.querySelector('.imagenes-del-header');
@@ -40,13 +41,13 @@ const trama = document.querySelector('.trama')
 const premios = document.querySelector('.premios')
 const elenco = document.querySelector(".elenco")
 const elencoPelicula = document.querySelector(".elenco-pelicula") 
-const trailer = document.querySelector(".trailer")
 const salirDePelicula = document.querySelector(".salir-de-pelicula")
-const volverDeElenco = document.querySelector('.volver-de-elenco');
+const volverDeElenco = document.querySelector('.volver-de-elenco')
+const trailer = document.querySelector('.trailer')
 
 /// Fetch Inicial ///
 const traerPeliculas = () => {
-  fetch('https://imdb-api.com/en/API/Top250Movies/k_sexpb7mq')
+  fetch(`https://imdb-api.com/en/API/Top250Movies/${API_KEY}`)
     .then((res) => res.json())
     .then((data) => {
       crearTarjetas(data);
@@ -58,7 +59,7 @@ traerPeliculas();
 /// Fetch para Buscar Pelicula especifica ///
 const buscarPeliculas = () => {
   fetch(
-    `https://imdb-api.com/es/API/SearchMovie/k_sexpb7mq/${inputBuscador.value}`
+    `https://imdb-api.com/es/API/SearchMovie/${API_KEY}/${inputBuscador.value}`
   )
     .then((res) => res.json())
     .then((data) => {
@@ -151,13 +152,24 @@ const entrarAPelicula = () => {
 };
 entrarAPelicula()
 
-/// Muestro descripcion de Pelicula ///
-const llamadoParaMostrarPelicula = (id) => {
-  fetch(`https://imdb-api.com/es/API/Title/k_sexpb7mq/${id}`)
+/// Boton para ver Trailers ///
+const verTrailer = (id) => {
+    fetch(`https://imdb-api.com/es/API/YouTubeTrailer/${API_KEY}/${id}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      let er = /\=[a-zA-Z0-9_]\w+/;
+      const arr = er.exec(data.videoUrl)
+      trailer.src = `https://www.youtube.com/embed/${arr[0].split('=')[1]}`;
+    })
+ }
+
+/// Muestro descripcion de Pelicula ///
+const llamadoParaMostrarPelicula = (id) => {
+  fetch(`https://imdb-api.com/es/API/Title/${API_KEY}/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
       mostrarPelicula(data);
+      verTrailer(id);
     });
 };
 
@@ -176,10 +188,11 @@ const mostrarPelicula = (dataPelicula) => {
   actores.textContent = `Actores: ${dataPelicula.stars}`
   trama.textContent = `Trama: ${dataPelicula.plot}`
   premios.textContent = `Premios: ${dataPelicula.awards}`
-  elencoPelicula.style.display ="none"
-  botonSalir.style.display = 'none';
+  elencoPelicula.style.display ="none";
+  botonSalir.style.display = "none";
   mostrarElenco(dataPelicula)
   funcionSalirDePelicula()
+
 }
 
 const mostrarElenco = (dataPelicula) => {
@@ -223,9 +236,3 @@ const funcionSalirDePelicula = () => {
   }
 }
 
-/// Boton para ver Trailers ///
-// const verTrailer = () => {
-//   trailer.onclick = () => {
-//   descripcionPelicula.style.display = 'none'
-//   }
-// }
