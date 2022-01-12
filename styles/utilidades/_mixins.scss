@@ -42,3 +42,20 @@
     font-family: $tipografia-principal;
     color: $color-texto-modo-oscuro;//$color-texto-modo-claro; 
 }
+
+@mixin botonSalirYVolver() {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    button{
+    @include boton(); 
+    margin-top:50px; 
+    display:none;
+    }
+    p{
+    margin: 0px;
+    }
+    button:hover p{
+    transform: scale(.9);
+    }
+}
