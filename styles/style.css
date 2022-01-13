@@ -176,7 +176,6 @@ nav button:hover span {
   display: "none";
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 100%;
   margin-top: 20px;
   display: none;
@@ -184,10 +183,10 @@ nav button:hover span {
 .descripcion-pelicula .container-descripcion-pelicula {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .descripcion-pelicula .container-img-pelicula {
   width: 500px;
+  height: max-content;
   background-color: transparent;
   box-shadow: #f37070 0px 4px 16px, #f37070 0px 8px 32px;
   margin: 40px;
@@ -226,12 +225,22 @@ nav button:hover span {
 }
 .descripcion-pelicula .container-info-pelicula p {
   margin: 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.descripcion-pelicula .container-info-pelicula span {
+  margin: 0px;
+  margin-left: 8px;
+  font-size: 20px;
+  font-weight: 100;
+}
+.descripcion-pelicula .container-info-pelicula .trailer {
+  margin-top: 30px;
 }
 
 .elenco-pelicula {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
   margin: 100px;
 }
@@ -290,7 +299,6 @@ nav button:hover span {
 .paginado {
   display: flex;
   justify-content: center;
-  align-items: center;
   margin-top: 80px;
 }
 .paginado button {
@@ -344,12 +352,12 @@ footer .contacto-footer a, footer .ico-footer a {
   background-color: transparent;
 }
 footer .contacto-footer a i, footer .ico-footer a i {
-  font-size: 40px;
+  font-size: 30px;
   color: white;
   margin: 10px;
 }
 footer .contacto-footer a .fa-imdb, footer .contacto-footer a .fa-heartbeat, footer .ico-footer a .fa-imdb, footer .ico-footer a .fa-heartbeat {
-  font-size: 50px;
+  font-size: 40px;
 }
 footer .contacto-footer a:hover i, footer .ico-footer a:hover i {
   transform: scale(0.9);
