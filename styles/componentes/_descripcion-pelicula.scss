@@ -11,6 +11,7 @@
     };
     .container-img-pelicula{
         width: 500px;
+        height: max-content;
         background-color:transparent; 
         box-shadow: $box-shadow-descrip-pelicula;
         margin: 40px;
@@ -38,8 +39,19 @@
         }
         p{
         margin:0px;
-
+        font-size: 20px;
+        font-weight: bold;
         }
+        span{
+           margin: 0px;
+           margin-left: 8px;
+           font-size: 20px;
+           font-weight: 100; 
+        }
+        .trailer{
+            margin-top:30px;
+        }
+
 };
 display:none;
 }

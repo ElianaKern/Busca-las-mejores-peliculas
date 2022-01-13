@@ -2,7 +2,7 @@
 /// CLAVES DE REPUESTO SI SE AGOTAN LOS LLAMADOS:
 ///    k_ddwodv5z , k_pk8lnjxj , k_58z780e4 ,  k_ruh05m8g , k_rcjxz3o6 , k_mmzma8jv , k_sexpb7mq///
 
-const API_KEY = 'k_pk8lnjxj';
+const API_KEY = 'k_sexpb7mq';
 /// Elementos del DOM ///
 //Header
 const imagenesDelHeader = document.querySelector('.imagenes-del-header');
@@ -72,6 +72,8 @@ botonBuscador.onclick = (event) => {
   event.preventDefault()
   buscarPeliculas()
 }
+
+/// Funcion que me da una tarjeta?????
 
 /// Resultado de Busqueda ///
 const crearTarjetasBusqueda = (data) => {
@@ -152,17 +154,6 @@ const entrarAPelicula = () => {
 };
 entrarAPelicula()
 
-/// Boton para ver Trailers ///
-const verTrailer = (id) => {
-    fetch(`https://imdb-api.com/es/API/YouTubeTrailer/${API_KEY}/${id}`)
-    .then((res) => res.json())
-    .then((data) => {
-      let er = /\=[a-zA-Z0-9_]\w+/;
-      const arr = er.exec(data.videoUrl)
-      trailer.src = `https://www.youtube.com/embed/${arr[0].split('=')[1]}`;
-    })
- }
-
 /// Muestro descripcion de Pelicula ///
 const llamadoParaMostrarPelicula = (id) => {
   fetch(`https://imdb-api.com/es/API/Title/${API_KEY}/${id}`)
@@ -181,13 +172,13 @@ const mostrarPelicula = (dataPelicula) => {
   descripcionPelicula.style.display = "flex"
   imgDescripcionPelicula.src = dataPelicula.image
   titulo.textContent = dataPelicula.title
-  anio.textContent = `Año: ${dataPelicula.year}`
+  anio.textContent = dataPelicula.year
   duracion.textContent = `Duracion: ${dataPelicula.runtimeStr}`
   genero.textContent = `Género: ${dataPelicula.genres}`
   director.textContent = `Director: ${dataPelicula.directors}`;
   actores.textContent = `Actores: ${dataPelicula.stars}`
-  trama.textContent = `Trama: ${dataPelicula.plot}`
   premios.textContent = `Premios: ${dataPelicula.awards}`
+  trama.textContent = `Trama: ${dataPelicula.plot}`;
   elencoPelicula.style.display ="none";
   botonSalir.style.display = "none";
   mostrarElenco(dataPelicula)
@@ -224,6 +215,17 @@ const crearTarjetasElenco = (dataPelicula) => {
     botonVolver.style.display = "none"
   }
 }
+
+/// Llamado para mostrar Trailers ///
+const verTrailer = (id) => {
+    fetch(`https://imdb-api.com/es/API/YouTubeTrailer/${API_KEY}/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      let er = /\=[a-zA-Z0-9_]\w+/;
+      const arr = er.exec(data.videoUrl)
+      trailer.src = `https://www.youtube.com/embed/${arr[0].split('=')[1]}`;
+    })
+ }
 
 /// Boton para salir de Pelicula ///
 const funcionSalirDePelicula = () => {

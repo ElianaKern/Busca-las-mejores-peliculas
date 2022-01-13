@@ -24,6 +24,12 @@
 @mixin flexCentrado() {
     display: flex;
     justify-content: center;
+    //align-items: center;
+}
+
+@mixin flexItemsCentrado() {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
