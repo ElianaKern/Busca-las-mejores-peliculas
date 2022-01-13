@@ -1,8 +1,8 @@
 /// CLAVE PRINCIPAL PARA LLAMADO DE API : k_w0x9nsxv ///
 /// CLAVES DE REPUESTO SI SE AGOTAN LOS LLAMADOS:
-///    k_ddwodv5z , k_pk8lnjxj , k_58z780e4 ,  k_ruh05m8g , k_rcjxz3o6 , k_mmzma8jv , k_sexpb7mq///
+/// k_o4a8ehbp , k_ddwodv5z , k_pk8lnjxj , k_58z780e4 ,  k_ruh05m8g , k_rcjxz3o6 , k_mmzma8jv , k_sexpb7mq///
 
-const API_KEY = 'k_sexpb7mq';
+const API_KEY = 'k_ddwodv5z';
 /// Elementos del DOM ///
 //Header
 const imagenesDelHeader = document.querySelector('.imagenes-del-header');
@@ -10,6 +10,7 @@ const imagenesDelHeader = document.querySelector('.imagenes-del-header');
 //Nav Busqueda
 const inputBuscador = document.getElementById('input-buscador');
 const botonBuscador = document.querySelector('.button-buscador');
+const selectSort = document.getElementById("select-sort");
 
 //Seccion Principal
 const contenedorPeliculas = document.querySelector('.container-peliculas'); 
@@ -31,7 +32,7 @@ const nav = document.querySelector("nav")
 const imgDescripcionPelicula = document.querySelector(
   '.img-descripcion-pelicula'
 )
-const titulo = document.querySelector(".titulo")
+const titulo = document.querySelector(".titulo-descripcion-pelicula")
 const anio = document.querySelector('.anio')
 const duracion = document.querySelector('.duracion')
 const genero = document.querySelector('.genero')
@@ -50,8 +51,10 @@ const traerPeliculas = () => {
   fetch(`https://imdb-api.com/en/API/Top250Movies/${API_KEY}`)
     .then((res) => res.json())
     .then((data) => {
+      sort(data, selectSort.value);
       crearTarjetas(data);
       entrarAPelicula();
+      
     });
 };
 traerPeliculas();
@@ -63,7 +66,6 @@ const buscarPeliculas = () => {
   )
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       crearTarjetasBusqueda(data);
       entrarAPelicula();
     });
@@ -89,7 +91,6 @@ const crearTarjetasBusqueda = (data) => {
   contenedorPeliculas.innerHTML = html;
   botonSalir.style.display = 'block';
   paginado.style.display ="none"    
-  console.log(botonSalir)
   botonSalir.onclick = () =>{
     traerPeliculas();
     paginado.style.display = 'flex';
@@ -97,6 +98,43 @@ const crearTarjetasBusqueda = (data) => {
   }
   
 };
+
+/// Ordenar de A-Z y de Z-A
+selectSort.onchange = () =>{
+  traerPeliculas();
+}
+const sort = (data,valueUsuario) =>{
+  if(valueUsuario === "a-z"){
+    const aZ = data.items.sort((a, b) => {
+      if (a.title.toLowerCase() < b.title.toLowerCase()) {
+        return -1;
+      }
+      if (a.title.toLowerCase() > b.title.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    });
+    const dataOrdenadaAz = {items:aZ}
+    crearTarjetas(dataOrdenadaAz)
+  }
+  if (valueUsuario === 'z-a') {
+    const zA = data.items.sort((a, b) => {
+      if (a.title.toLowerCase() > b.title.toLowerCase()) {
+        return -1;
+      }
+      if (a.title.toLowerCase() < b.title.toLowerCase()) {
+        return 1;
+      }
+      return 0;
+    });
+    const dataOrdenadaZa = { items:zA};
+    crearTarjetas(dataOrdenadaZa);
+  }
+  if(valueUsuario === "al-azar"){
+    crearTarjetas(data);
+  }
+}
+
 
 /// Crear Tarjetas ///
 let paginaActual = 0
@@ -125,8 +163,7 @@ botonPaginaAnterior.onclick = () => {
     prev.disabled = true
   };
   paginaActual = paginaActual-18
-  traerPeliculas();
-  
+  traerPeliculas();  
 }
 botonPaginaPosterior.onclick = () =>{
   if (paginaActual === 240) {
@@ -139,8 +176,7 @@ botonPaginaPosterior.onclick = () =>{
 botonPaginaFinal.onclick = () => {
   paginaActual = 240;
   traerPeliculas();
-};
-
+}
 
 /// Entrar a Pelicula ///
 const entrarAPelicula = () => {
@@ -173,12 +209,12 @@ const mostrarPelicula = (dataPelicula) => {
   imgDescripcionPelicula.src = dataPelicula.image
   titulo.textContent = dataPelicula.title
   anio.textContent = dataPelicula.year
-  duracion.textContent = `Duracion: ${dataPelicula.runtimeStr}`
-  genero.textContent = `Género: ${dataPelicula.genres}`
-  director.textContent = `Director: ${dataPelicula.directors}`;
-  actores.textContent = `Actores: ${dataPelicula.stars}`
-  premios.textContent = `Premios: ${dataPelicula.awards}`
-  trama.textContent = `Trama: ${dataPelicula.plot}`;
+  duracion.textContent = dataPelicula.runtimeStr
+  genero.textContent = dataPelicula.genres
+  director.textContent = dataPelicula.directors
+  actores.textContent = dataPelicula.stars
+  premios.textContent = dataPelicula.awards
+  trama.textContent = dataPelicula.plot
   elencoPelicula.style.display ="none";
   botonSalir.style.display = "none";
   mostrarElenco(dataPelicula)
