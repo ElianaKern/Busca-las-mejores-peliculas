@@ -64,3 +64,15 @@
     transform: scale(.9);
     }
 }
+
+@mixin input() {
+    width: 30%;
+    font-size: $tamanio-titulos-y-botones; 
+    font-family: $tipografia-principal;
+    font-weight: bold;
+    margin-right: 25px; 
+    color: rgba(0, 0, 0, 0.911);
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.63);
+}

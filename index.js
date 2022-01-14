@@ -1,23 +1,24 @@
-/// CLAVE PRINCIPAL PARA LLAMADO DE API : k_w0x9nsxv ///
-/// CLAVES DE REPUESTO SI SE AGOTAN LOS LLAMADOS:
-/// k_o4a8ehbp , k_ddwodv5z , k_pk8lnjxj , k_58z780e4 ,  k_ruh05m8g , k_rcjxz3o6 , k_mmzma8jv , k_sexpb7mq///
+/// CLAVES PARA LLAMADO DE LA API : 
+// k_m9iw5lkn , k_dwwf2q9o , k_o4a8ehbp , k_ddwodv5z ,
+// k_5to2z0cv,k_w0x9nsxv , k_pk8lnjxj , k_58z780e4 ,  
+// k_rcjxz3o6 , k_mmzma8jv , k_sexpb7mq ,  k_ruh05m8g , k_j12bhuve ///
+const API_KEY = 'k_5to2z0cv';
 
-const API_KEY = 'k_ddwodv5z';
 /// Elementos del DOM ///
-//Header
+// Header //
 const imagenesDelHeader = document.querySelector('.imagenes-del-header');
 
-//Nav Busqueda
+// Nav Busqueda //
 const inputBuscador = document.getElementById('input-buscador');
 const botonBuscador = document.querySelector('.button-buscador');
 const selectSort = document.getElementById("select-sort");
 
-//Seccion Principal
+// Seccion Principal //
 const contenedorPeliculas = document.querySelector('.container-peliculas'); 
 const salirDeBusqueda = document.querySelector('.salir-de-busqueda');
 const botonSalir = document.querySelector('.salir');
 
-//Paginado
+// Paginado //
 const botonPaginaInicial = document.querySelector(".button-pagina-inicial")
 const botonPaginaPosterior = document.querySelector('.button-pagina-posterior')
 const iconoPaginaPosterior = document.querySelector('.button-pagina-posterior i');
@@ -26,7 +27,7 @@ const iconoPaginaAnterior = document.querySelector(".button-pagina-anterior i")
 const botonPaginaFinal = document.querySelector(".button-pagina-final")
 const paginado = document.querySelector(".paginado")
 
-//Seccion Descripcion Pelicula
+// Seccion Descripcion Pelicula //
 const descripcionPelicula = document.querySelector('.descripcion-pelicula');
 const nav = document.querySelector("nav")
 const imgDescripcionPelicula = document.querySelector(
@@ -99,7 +100,7 @@ const crearTarjetasBusqueda = (data) => {
   
 };
 
-/// Ordenar de A-Z y de Z-A
+/// Ordenar de A-Z , de Z-A y al azar ///
 selectSort.onchange = () =>{
   traerPeliculas();
 }
@@ -134,7 +135,6 @@ const sort = (data,valueUsuario) =>{
     crearTarjetas(data);
   }
 }
-
 
 /// Crear Tarjetas ///
 let paginaActual = 0
@@ -190,7 +190,7 @@ const entrarAPelicula = () => {
 };
 entrarAPelicula()
 
-/// Muestro descripcion de Pelicula ///
+/////////// Seccion descripcion de Pelicula ////////////////////
 const llamadoParaMostrarPelicula = (id) => {
   fetch(`https://imdb-api.com/es/API/Title/${API_KEY}/${id}`)
     .then((res) => res.json())
@@ -200,6 +200,7 @@ const llamadoParaMostrarPelicula = (id) => {
     });
 };
 
+/// Muestro imagen y descripcion de pelicula
 const mostrarPelicula = (dataPelicula) => {
   nav.style.display = 'none';
   contenedorPeliculas.style.display = "none"
@@ -221,7 +222,7 @@ const mostrarPelicula = (dataPelicula) => {
   funcionSalirDePelicula()
 
 }
-
+/// Boton que muestra elenco
 const mostrarElenco = (dataPelicula) => {
   elenco.onclick = () => {
     elencoPelicula.style.display = 'flex';
@@ -230,6 +231,7 @@ const mostrarElenco = (dataPelicula) => {
   }
 }
 
+/// Muestra fotos del elenco y boton volver 
 const crearTarjetasElenco = (dataPelicula) => {
   elencoPelicula.display = 'flex'
   const arrayElenco = dataPelicula.actorList
@@ -252,7 +254,7 @@ const crearTarjetasElenco = (dataPelicula) => {
   }
 }
 
-/// Llamado para mostrar Trailers ///
+/// Llamado para mostrar Trailers 
 const verTrailer = (id) => {
     fetch(`https://imdb-api.com/es/API/YouTubeTrailer/${API_KEY}/${id}`)
     .then((res) => res.json())
@@ -263,7 +265,7 @@ const verTrailer = (id) => {
     })
  }
 
-/// Boton para salir de Pelicula ///
+/// Boton para salir de Pelicula 
 const funcionSalirDePelicula = () => {
   salirDePelicula.onclick = () => {
     descripcionPelicula.style.display = 'none'

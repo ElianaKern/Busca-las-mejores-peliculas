@@ -66,19 +66,20 @@ nav label {
   font-family: "Saira Condensed", sans-serif;
   color: #fff;
   margin-right: 20px;
+  margin-left: 30px;
   font-size: 30px;
   font-weight: bold;
 }
 nav input {
-  width: 70%;
+  width: 30%;
   font-size: 25px;
   font-family: "Saira Condensed", sans-serif;
   font-weight: bold;
-  margin-right: 30px;
-  color: black;
+  margin-right: 25px;
+  color: rgba(0, 0, 0, 0.911);
   background-color: transparent;
   border: none;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.63);
 }
 nav input::placeholder {
   background-image: url(../../img/camara-negro.png);
@@ -105,6 +106,17 @@ nav button {
 }
 nav button:hover span {
   transform: scale(0.9);
+}
+nav select {
+  width: 30%;
+  font-size: 25px;
+  font-family: "Saira Condensed", sans-serif;
+  font-weight: bold;
+  margin-right: 25px;
+  color: rgba(0, 0, 0, 0.911);
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.63);
 }
 
 .salir-de-busqueda {
