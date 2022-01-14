@@ -6,19 +6,12 @@ nav{
     label{
         @include tipografiaYColor();
         margin-right: 20px;
+        margin-left: 30px;
         font-size: 30px;
         font-weight: bold;
     }
     input{
-        width: 70%;
-        font-size: $tamanio-titulos-y-botones; 
-        font-family: $tipografia-principal;
-        font-weight: bold;
-        margin-right: 30px; 
-        color: black;
-        background-color: transparent;
-        border: none;
-        border-bottom: 3px solid black;    
+        @include input(); 
     }
     input::placeholder{
         background-image: url(../../img/camara-negro.png);
@@ -34,6 +27,11 @@ nav{
     button:hover span {
        transform: scale(.9);
     }
+    select{
+        @include input();
+    }
+        
+ 
 
 }
 

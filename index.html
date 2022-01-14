@@ -28,6 +28,12 @@
       <label for="input-buscador">Búsqueda</label>
       <input type="text" id="input-buscador" placeholder="The Godfather"/>
       <button class="button-buscador"><span>Buscar</span></button>
+      <label for="select-sort">Buscar por</label>
+      <select id="select-sort">
+        <option value="al-azar">Al azar</option>
+        <option value="a-z">A-Z</option>
+        <option value="z-a">Z-A</option>
+      </select>
     </nav>
     <main>
       <div class="container-peliculas"></div>
@@ -49,14 +55,14 @@
             <img class="img-descripcion-pelicula" src="" alt="imagen portada de la pelicula">
           </div>
           <div class="container-info-pelicula">
-            <h2 class="titulo"></h2>
+            <h2 class="titulo-descripcion-pelicula"></h2>
             <p>Año:<span class="anio"></span></p>
-            <p class="duracion"></p>
-            <p class="genero"></p>
-            <p class="director"></p>
-            <p class="actores"></p>
-            <p class="premios"></p>
-            <p class="trama"></p>
+            <p>Duración:<span class="duracion"></span></p>
+            <p>Género:<span class="genero"></span></p>
+            <p>Director:<span class="director"></span></p>
+            <p>Actores:<span class="actores"></span></p>
+            <p>Premios:<span class="premios"></span></p>
+            <p>Trama:<span class="trama"></span></p>
             <iframe class="trailer" width="420" height="315"src=""></iframe>
             <button class="elenco"><p>Elenco</p></button>
             <button class="salir-de-pelicula"><p>Salir</p></button>

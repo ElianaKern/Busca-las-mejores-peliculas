@@ -66,19 +66,20 @@ nav label {
   font-family: "Saira Condensed", sans-serif;
   color: #fff;
   margin-right: 20px;
+  margin-left: 30px;
   font-size: 30px;
   font-weight: bold;
 }
 nav input {
-  width: 70%;
+  width: 30%;
   font-size: 25px;
   font-family: "Saira Condensed", sans-serif;
   font-weight: bold;
-  margin-right: 30px;
-  color: black;
+  margin-right: 25px;
+  color: rgba(0, 0, 0, 0.911);
   background-color: transparent;
   border: none;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.63);
 }
 nav input::placeholder {
   background-image: url(../../img/camara-negro.png);
@@ -105,6 +106,17 @@ nav button {
 }
 nav button:hover span {
   transform: scale(0.9);
+}
+nav select {
+  width: 30%;
+  font-size: 25px;
+  font-family: "Saira Condensed", sans-serif;
+  font-weight: bold;
+  margin-right: 25px;
+  color: rgba(0, 0, 0, 0.911);
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.63);
 }
 
 .salir-de-busqueda {
@@ -198,13 +210,10 @@ nav button:hover span {
 }
 .descripcion-pelicula .container-info-pelicula {
   width: 500px;
-  font-size: 20px;
-  font-family: "Saira Condensed", sans-serif;
-  color: #fff;
 }
-.descripcion-pelicula .container-info-pelicula .titulo {
-  font-size: 40px;
-  margin-bottom: 25px;
+.descripcion-pelicula .container-info-pelicula h2 {
+  font-size: 35px;
+  margin-bottom: 0px;
 }
 .descripcion-pelicula .container-info-pelicula button {
   background-color: rgba(12, 11, 11, 0.877);
@@ -227,6 +236,7 @@ nav button:hover span {
   margin: 0px;
   font-size: 20px;
   font-weight: bold;
+  line-height: 1.3;
 }
 .descripcion-pelicula .container-info-pelicula span {
   margin: 0px;
@@ -236,6 +246,8 @@ nav button:hover span {
 }
 .descripcion-pelicula .container-info-pelicula .trailer {
   margin-top: 30px;
+  width: 480px;
+  height: 300px;
 }
 
 .elenco-pelicula {
