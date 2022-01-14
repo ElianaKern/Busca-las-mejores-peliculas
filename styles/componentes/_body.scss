@@ -1,5 +1,5 @@
 body{
     @include flexCentradoColumn();
-    @include color-fondo-body();
+    @include colorFondoBody();
     @include tipografiaYColor();
 }

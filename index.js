@@ -2,11 +2,12 @@
 // k_m9iw5lkn , k_dwwf2q9o , k_o4a8ehbp , k_ddwodv5z ,
 // k_5to2z0cv,k_w0x9nsxv , k_pk8lnjxj , k_58z780e4 ,  
 // k_rcjxz3o6 , k_mmzma8jv , k_sexpb7mq ,  k_ruh05m8g , k_j12bhuve ///
-const API_KEY = 'k_5to2z0cv';
-
-/// Elementos del DOM ///
+const API_KEY = 'k_o4a8ehbp';
+// Body //
+const body = document.querySelector("body");
 // Header //
 const imagenesDelHeader = document.querySelector('.imagenes-del-header');
+const h1 = document.querySelector("h1")
 
 // Nav Busqueda //
 const inputBuscador = document.getElementById('input-buscador');
@@ -47,6 +48,12 @@ const salirDePelicula = document.querySelector(".salir-de-pelicula")
 const volverDeElenco = document.querySelector('.volver-de-elenco')
 const trailer = document.querySelector('.trailer')
 
+
+/// Modo Claro ///
+h1.onclick = () => {
+  body.classList.toggle('modo-claro');
+};
+
 /// Fetch Inicial ///
 const traerPeliculas = () => {
   fetch(`https://imdb-api.com/en/API/Top250Movies/${API_KEY}`)
@@ -76,7 +83,7 @@ botonBuscador.onclick = (event) => {
   buscarPeliculas()
 }
 
-/// Funcion que me da una tarjeta?????
+/// Funcion que me da una tarjeta y luego reciclo??
 
 /// Resultado de Busqueda ///
 const crearTarjetasBusqueda = (data) => {
@@ -185,12 +192,16 @@ const entrarAPelicula = () => {
     tarjetas[i].onclick = () => {
       let id = tarjetas[i].dataset.id;
       llamadoParaMostrarPelicula(id);
+  
     };
   }
 };
 entrarAPelicula()
 
-/////////// Seccion descripcion de Pelicula ////////////////////
+/*////////////////////////////////////////////////////////////////////////////////////////// 
+                    Seccion descripcion Pelicula 
+/////////////////////////////////////////////////////////////////////////////////////////*/
+
 const llamadoParaMostrarPelicula = (id) => {
   fetch(`https://imdb-api.com/es/API/Title/${API_KEY}/${id}`)
     .then((res) => res.json())
@@ -205,7 +216,6 @@ const mostrarPelicula = (dataPelicula) => {
   nav.style.display = 'none';
   contenedorPeliculas.style.display = "none"
   paginado.style.display = "none"
-  //imagenesDelHeader.style.display = "none"//ver bien pq me desaparece definitivo
   descripcionPelicula.style.display = "flex"
   imgDescripcionPelicula.src = dataPelicula.image
   titulo.textContent = dataPelicula.title
@@ -219,7 +229,7 @@ const mostrarPelicula = (dataPelicula) => {
   elencoPelicula.style.display ="none";
   botonSalir.style.display = "none";
   mostrarElenco(dataPelicula)
-  funcionSalirDePelicula()
+  funcionSalirDePelicula();
 
 }
 /// Boton que muestra elenco

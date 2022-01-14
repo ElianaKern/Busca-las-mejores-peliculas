@@ -1,23 +1,34 @@
 header{
     width: 100%; 
     .container-titulo-principal{
-        @include color-fondos-principal();
+        @include colorFondosPrincipal();
         @include flexCentradoColumn();
     }
     .titulo-principal{
-        @include color-fondos-principal();
+        @include colorFondosPrincipal();
         @include tipografiaYColor();
         font-size:40px;
         padding: 40px;
         margin-bottom: 0px;
         margin-top: 0px;
+        cursor: pointer;
     }
-    // .imagenes-del-header{
-    //     display: flex;///no me funciona
-    // }
+    .titulo-principal:hover{
+        transform: scale(.9); 
+    }
+    .imagenes-del-header{
+        cursor: pointer;
+    }
     .img-claqueta-header, .img-tira-header{
         width: auto;
         height: 380px;
+        transition: 4s;
+    }
+    .img-tira-header:hover{
+        transform: translateY(-20%);
+    }
+    .img-claqueta-header{
+        transform: translateX(5%);
     }
 }
 @media screen and (max-width: 1200px ) {
