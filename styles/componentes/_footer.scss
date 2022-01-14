@@ -1,13 +1,18 @@
 footer{
     @include flexItemsCentrado();
     .fondo-footer{
-       @include flexItemsCentrado(); 
+       display: flex;
+       position: relative; 
+  
+      
     }
-    background-image: url(../../img/tira.jpg);
+    background-image: url(../../img/img-fondo-footer.png);
     background-repeat: no-repeat;
-    background-position: center top;
+
+    background-position: right top;
+    background-size: cover;
     width: 100%;
-    height: 550px;
+    height: 510px;
     .contacto-footer, .ico-footer {
         @include flexItemsCentrado;
         @include colorFondosPrincipal;

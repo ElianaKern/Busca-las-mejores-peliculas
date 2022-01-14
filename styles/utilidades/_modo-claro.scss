@@ -1,13 +1,16 @@
 .modo-claro{
     @include colorFondoBodyModoClaro();
     @include tipografiaYColorModoClaro();
-    .container-info-pelicula button{
+    .container-info-pelicula .elenco{
         @include botonModoClaro();
     }
-    .nombre-del-actor{
+    .container-info-pelicula .salir-de-pelicula{
+        @include botonModoClaro();
+    }
+    .elenco-pelicula .nombre-del-actor{
         @include tipografiaYColorModoClaro();
     }
-    .nombre-del-personaje{
+    .elenco-pelicula .nombre-del-personaje{
         @include tipografiaYColorModoClaro();
     }
     .volver-de-elenco{
@@ -35,7 +38,7 @@
     .titulo{
         @include tipografiaYColorModoClaro();
     }
-    .contacto-footer, .ico-footer {
+    .contacto-footer, .ico-footer{
         @include colorFondosPrincipalModoClaro();
     }
     .contacto-footer P{
@@ -44,4 +47,6 @@
     .ico-footer P{
         font-weight: bolder;
     }
+
 }
+    
