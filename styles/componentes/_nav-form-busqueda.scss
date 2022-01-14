@@ -23,6 +23,7 @@ nav{
     button{
         @include flexCentradoColumn();
         @include boton();
+        margin-right: 15px;
     }
     button:hover span {
        transform: scale(.9);

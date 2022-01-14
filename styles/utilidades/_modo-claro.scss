@@ -1,0 +1,47 @@
+.modo-claro{
+    @include colorFondoBodyModoClaro();
+    @include tipografiaYColorModoClaro();
+    .container-info-pelicula button{
+        @include botonModoClaro();
+    }
+    .nombre-del-actor{
+        @include tipografiaYColorModoClaro();
+    }
+    .nombre-del-personaje{
+        @include tipografiaYColorModoClaro();
+    }
+    .volver-de-elenco{
+        @include botonSalirYVolverModoClaro();
+    }
+    .container-titulo-principal{
+        @include colorFondosPrincipalModoClaro();
+    }
+    .titulo-principal{
+        @include colorFondosPrincipalModoClaro();
+        @include tipografiaYColorModoClaro();
+    }
+    label{
+        @include tipografiaYColorModoClaro();
+    }
+    nav button{
+        @include botonModoClaro();
+    }
+    .paginado button{
+        @include botonModoClaro();
+    }
+    .salir-de-busqueda{
+        @include botonSalirYVolverModoClaro();
+    }
+    .titulo{
+        @include tipografiaYColorModoClaro();
+    }
+    .contacto-footer, .ico-footer {
+        @include colorFondosPrincipalModoClaro();
+    }
+    .contacto-footer P{
+        font-weight: bolder;
+    }
+    .ico-footer P{
+        font-weight: bolder;
+    }
+}
