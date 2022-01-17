@@ -16,8 +16,8 @@ footer{
     .contacto-footer, .ico-footer {
         @include flexItemsCentrado;
         @include colorFondosPrincipal;
-        margin: 20px;
-        padding: 10px;
+        margin: 15px;
+        padding: 5px;
         font-size: 18px;
         p{
         margin: 0px;
@@ -46,9 +46,17 @@ footer{
     }
 } 
 }
-
-@media screen and(max-width : 700px){
-    footer{
-        @include flexCentradoColumn()
+@media screen and(max-width : 1200px){
+   footer{
+       height: 350px;
+    }
+}
+@media screen and(max-width : 1010px){
+   .fondo-footer{
+        @include flexCentradoColumn();
+    }
+    .contacto-footer, .ico-footer {
+        margin: 0px;
+        padding: 2px;
     }
 }
