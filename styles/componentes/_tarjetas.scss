@@ -25,6 +25,32 @@
     @include tipografiaYColor();
     font-size: $tamanio-titulos-y-botones;
     margin: 0px;
-    margin-top: 25px;
+    margin-top: 22px;
     line-height: 1;
 }
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////
+                RESPONSIVE                
+///////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 1200px ) {
+    .tarjeta{
+       width: 200px;
+    }
+}
+@media screen and (max-width: 500px ) {
+    .tarjeta{
+       width: 140px;
+    }
+    .titulo{
+        font-size: 20px;
+    } 
+}
+@media screen and (max-width: 400px ) {
+    .tarjeta{
+       width: 110px;
+    }
+    .titulo{
+        font-size: 15px;
+    } 
+}
+

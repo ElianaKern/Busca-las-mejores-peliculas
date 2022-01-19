@@ -30,4 +30,31 @@
     @include botonSalirYVolver();
 }
 
-
+/*///////////////////////////////////////////////////////////////////////////////////////////////
+                RESPONSIVE                
+///////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 1100px ) {
+  .elenco-pelicula{
+    margin:0px;
+  }
+}
+@media screen and (max-width: 600px ) {
+  .elenco-pelicula{
+    margin:0px;
+    .foto-del-actor{
+        width: 60px;
+        height: 150px;
+    }
+    .nombre-del-actor{
+        font-size: 20px;
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+    .nombre-del-personaje{
+        font-size: 15px;
+    }
+    }
+ .volver-de-elenco .volver p{
+    font-size: 15px;
+}
+}

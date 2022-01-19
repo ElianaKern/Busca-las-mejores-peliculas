@@ -1,39 +1,67 @@
-nav{
-    width: 80%;
-    display: flex;
-    margin-top: 60px;
-    margin-bottom: 30px;
-    label{
-        @include tipografiaYColor();
-        margin-right: 20px;
-        margin-left: 30px;
-        font-size: 30px;
-        font-weight: bold;
-    }
-    input{
-        @include input(); 
-    }
-    input::placeholder{
-        background-image: url(../../img/camara-negro.png);
-        background-size: 35px 35px;
-        background-repeat: no-repeat;
-        padding-left:50px;
-        color: rgb(34, 31, 31)
-    }
-    button{
-        @include flexCentradoColumn();
-        @include boton();
-        margin-right: 15px;
-    }
-    button:hover span {
-       transform: scale(.9);
-    }
-    select{
-        @include input();
-    }
-        
- 
-
+nav {
+  width: 80%;
+  display: flex;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  label {
+    @include tipografiaYColor();
+    margin-right: 20px;
+    margin-left: 30px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  input {
+    @include input();
+  }
+  input::placeholder {
+    background-image: url(../../img/camara-negro.jpg);
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    padding-left: 50px;
+    color: rgb(34, 31, 31);
+  }
+  button {
+    @include boton();
+    margin-right: 15px;
+  }
+  button:hover span {
+    transform: scale(0.9);
+  }
+  select {
+    @include input();
+  }
 }
 
-
+/*///////////////////////////////////////////////////////////////////////////////////////////////
+                RESPONSIVE                
+///////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 1200px) {
+  nav {
+    width: 100%;
+    @include flexCentradoColumn();
+    button {
+        margin:10px;
+        font-size: 20px;
+     }
+    label {
+        margin-top: 15px;
+        font-size: 25px;
+    }
+    select{
+        font-size: 15px;
+        margin: 0px;
+        width: 80%;
+    }
+    input{
+        font-size: 15px;
+        margin: 0px;
+        width: 80%;
+    }
+}
+}
+@media screen and (max-width: 500px) {
+   .modo-claro nav button{
+      font-size: 20px;
+     } 
+    
+}

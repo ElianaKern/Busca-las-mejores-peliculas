@@ -1,10 +1,15 @@
-/// CLAVES PARA LLAMADO DE LA API : 
-// k_m9iw5lkn , k_dwwf2q9o , k_o4a8ehbp , k_ddwodv5z ,
-// k_5to2z0cv,k_w0x9nsxv , k_pk8lnjxj , k_58z780e4 ,  
-// k_rcjxz3o6 , k_mmzma8jv , k_sexpb7mq ,  k_ruh05m8g , k_j12bhuve ///
-const API_KEY = 'k_o4a8ehbp';
+/*////////////////////////////////////////////////////////////////////////////////
+      CLAVES PARA LLAMADO DE LA API : 
+/////////////////////////////////////////////////////////////////////////////////
+ k_m9iw5lkn , k_dwwf2q9o , k_o4a8ehbp , k_ddwodv5z , k_5to2z0cv ,
+ k_w0x9nsxv , k_pk8lnjxj , k_58z780e4 ,  k_rcjxz3o6 , k_mmzma8jv , 
+ k_sexpb7mq ,  k_ruh05m8g , k_j12bhuve 
+//////////////////////////////////////////////////////////////////////////////*/
+const API_KEY = 'k_ddwodv5z';
+
 // Body //
 const body = document.querySelector("body");
+
 // Header //
 const imagenesDelHeader = document.querySelector('.imagenes-del-header');
 const h1 = document.querySelector("h1")
@@ -49,7 +54,7 @@ const volverDeElenco = document.querySelector('.volver-de-elenco')
 const trailer = document.querySelector('.trailer')
 
 
-/// Modo Claro ///
+/// Modo Oscuro ///
 h1.onclick = () => {
   body.classList.toggle('modo-claro');
 };
@@ -83,16 +88,14 @@ botonBuscador.onclick = (event) => {
   buscarPeliculas()
 }
 
-/// Funcion que me da una tarjeta y luego reciclo??
-
 /// Resultado de Busqueda ///
 const crearTarjetasBusqueda = (data) => {
   const html = data.results.reduce((acc, pelicula) => {
     return (
       acc +
       `<div class="tarjeta" data-id=${pelicula.id}>
-        <img src="${pelicula.image}" class="img-portada-peliculas">
-        <h1 class="titulo">${pelicula.title}</h1>
+        <img src="${pelicula.image}" class="img-portada-peliculas" alt="imagen portada de la pelicula">
+        <h2 class="titulo">${pelicula.title}</h2>
       </div>`
     );
   }, '');
@@ -107,7 +110,7 @@ const crearTarjetasBusqueda = (data) => {
   
 };
 
-/// Ordenar de A-Z , de Z-A y al azar ///
+/// Ordenar de A-Z , de Z-A y al Azar ///
 selectSort.onchange = () =>{
   traerPeliculas();
 }
@@ -151,10 +154,10 @@ const crearTarjetas = (data) => {
     return (
       acc +
       `<div class="tarjeta" data-id=${pelicula.id}>
-        <img src="${pelicula.image}" class="img-portada-peliculas">
+        <img src="${pelicula.image}" class="img-portada-peliculas" alt="imagen portada de la pelicula">
         <h1 class="titulo">${pelicula.title}</h1>
       </div>`
-    )
+    );
   }, '')
   contenedorPeliculas.innerHTML = html
 };
@@ -211,7 +214,7 @@ const llamadoParaMostrarPelicula = (id) => {
     });
 };
 
-/// Muestro imagen y descripcion de pelicula
+/// Muestro imagen y descripcion de pelicula ///
 const mostrarPelicula = (dataPelicula) => {
   nav.style.display = 'none';
   contenedorPeliculas.style.display = "none"
@@ -232,7 +235,7 @@ const mostrarPelicula = (dataPelicula) => {
   funcionSalirDePelicula();
 
 }
-/// Boton que muestra elenco
+/// Boton que muestra elenco ///
 const mostrarElenco = (dataPelicula) => {
   elenco.onclick = () => {
     elencoPelicula.style.display = 'flex';
@@ -241,7 +244,7 @@ const mostrarElenco = (dataPelicula) => {
   }
 }
 
-/// Muestra fotos del elenco y boton volver 
+/// Muestra fotos del elenco y boton volver ///
 const crearTarjetasElenco = (dataPelicula) => {
   elencoPelicula.display = 'flex'
   const arrayElenco = dataPelicula.actorList
@@ -264,7 +267,7 @@ const crearTarjetasElenco = (dataPelicula) => {
   }
 }
 
-/// Llamado para mostrar Trailers 
+/// Llamado para mostrar Trailers ///
 const verTrailer = (id) => {
     fetch(`https://imdb-api.com/es/API/YouTubeTrailer/${API_KEY}/${id}`)
     .then((res) => res.json())
@@ -275,7 +278,7 @@ const verTrailer = (id) => {
     })
  }
 
-/// Boton para salir de Pelicula 
+/// Boton para salir de Pelicula ///
 const funcionSalirDePelicula = () => {
   salirDePelicula.onclick = () => {
     descripcionPelicula.style.display = 'none'

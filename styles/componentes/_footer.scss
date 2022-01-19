@@ -2,13 +2,10 @@ footer{
     @include flexItemsCentrado();
     .fondo-footer{
        display: flex;
-       position: relative; 
-  
-      
+       position: relative;  
     }
-    background-image: url(../../img/img-fondo-footer.png);
+    background-image: url(../../img/img-fondo-footer.jpg);
     background-repeat: no-repeat;
-
     background-position: right top;
     background-size: cover;
     width: 100%;
@@ -16,8 +13,8 @@ footer{
     .contacto-footer, .ico-footer {
         @include flexItemsCentrado;
         @include colorFondosPrincipal;
-        margin: 20px;
-        padding: 10px;
+        margin: 15px;
+        padding: 5px;
         font-size: 18px;
         p{
         margin: 0px;
@@ -47,8 +44,38 @@ footer{
 } 
 }
 
-@media screen and(max-width : 700px){
-    footer{
-        @include flexCentradoColumn()
+/*///////////////////////////////////////////////////////////////////////////////////////////////
+                RESPONSIVE                
+///////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and(max-width : 1200px){
+   footer{
+       height: 350px;
     }
+}
+@media screen and(max-width : 1010px){
+   .fondo-footer{
+        @include flexCentradoColumn();
+    }
+    .contacto-footer, .ico-footer {
+        margin: 0px;
+        padding: 2px;
+    }
+}
+@media screen and(max-width : 500px){
+   footer{
+    .contacto-footer, .ico-footer {
+        display: block;
+       margin: 5px;
+       i{
+        font-size: 20px;
+       }
+    .fa-heartbeat, .fa-imdb{
+       font-size: 30px;
+       margin:3px;
+    }
+    p{
+        font-size: 15px;
+    }
+   }
+   }
 }
