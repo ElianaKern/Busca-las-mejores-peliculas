@@ -5,29 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
+    <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script src="https://kit.fontawesome.com/42c1287158.js" crossorigin="anonymous"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/ico" href="FAVICON.ico"><!-- no me lo toma!!!! -->
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/42c1287158.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/ico" href="FAVICON.ico" />
     <title>The Best Movies</title>
   </head>
   <body class="modo-claro">
+    <!-- Header con titulo principal e imagenes-->
     <header>
       <div class="container-titulo-principal">
         <h1 class="titulo-principal">The Best Movies</h1>
         <div class="imagenes-del-header">
-          <img src="img/claqueta-cine.jpg" alt="imagen-claqueta-cine" class="img-claqueta-header"/>
-          <img src="img/tira-header.jpg" alt="imagen-tira-negativo" class="img-tira-header"/>
+          <img src="img/claqueta-cine.jpg" alt="imagen claqueta cine" class="img-claqueta-header"/>
+          <img src="img/tira-header.jpg" alt="imagen tira negativo" class="img-tira-header"/>
         </div>
       </div>
     </header>
+    <!-- Nav con busqueda y select con opciones de orden -->
     <nav>
       <label for="input-buscador">Búsqueda</label>
-      <input type="text" id="input-buscador" placeholder="The Godfather"/>
+      <input type="text" id="input-buscador" placeholder="The Godfather" />
       <button class="button-buscador"><span>Buscar</span></button>
       <label for="select-sort">Buscar por</label>
       <select id="select-sort">
@@ -37,23 +45,32 @@
       </select>
     </nav>
     <main>
+      <!-- Principal con tarjetas de peliculas -->
       <div class="container-peliculas"></div>
-
+      <!-- Paginado -->
       <section class="paginado">
-        <button class="button-pagina-inicial"><i class="fas fa-angle-double-left"></i></button>
-        <button class="button-pagina-anterior"><i class="fas fa-angle-left"></i></button>
-        <button class="button-pagina-posterior"><i class="fas fa-angle-right"></i></button>
-        <button class="button-pagina-final"><i class="fas fa-angle-double-right"></i></button>
-      </section>  
-
+        <button class="button-pagina-inicial">
+          <i class="fas fa-angle-double-left"></i>
+        </button>
+        <button class="button-pagina-anterior">
+          <i class="fas fa-angle-left"></i>
+        </button>
+        <button class="button-pagina-posterior">
+          <i class="fas fa-angle-right"></i>
+        </button>
+        <button class="button-pagina-final">
+          <i class="fas fa-angle-double-right"></i>
+        </button>
+      </section>
+      <!-- Boton para salir de resultado de tarjetas de busqueda -->
       <div class="salir-de-busqueda">
         <button class="salir"><p>Salir</p></button>
       </div>
-
+      <!--Seccion descripcion pelicula -->
       <section class="descripcion-pelicula">
         <div class="container-descripcion-pelicula">
           <div class="container-img-pelicula">
-            <img class="img-descripcion-pelicula" src="" alt="imagen portada de la pelicula">
+            <img class="img-descripcion-pelicula" src="" alt="imagen portada de la pelicula"/>
           </div>
           <div class="container-info-pelicula">
             <h2 class="titulo-descripcion-pelicula"></h2>
@@ -64,31 +81,42 @@
             <p>Actores:<span class="actores"></span></p>
             <p>Premios:<span class="premios"></span></p>
             <p>Trama:<span class="trama"></span></p>
-            <iframe class="trailer" width="420" height="315"src=""></iframe>
+            <iframe class="trailer" width="420" height="315" src=""></iframe>
             <button class="elenco"><p>Elenco</p></button>
             <button class="salir-de-pelicula"><p>Salir</p></button>
-          </div> 
+          </div>
         </div>
       </section>
-
-      <section class="elenco-pelicula">    
-      </section>
+      <!-- Seccion elenco -->
+      <section class="elenco-pelicula"></section>
 
       <div class="volver-de-elenco">
         <button class="volver"><p>Volver</p></button>
       </div>
-
     </main>
+    <!-- Footer con links de contacto y de api -->
     <footer>
       <div class="fondo-footer">
         <div class="ico-footer">
-          <p>Hecho con <a href="https://imdb-api.com/"><i class="fab fa-imdb"></i></a> y con <i class="fas fa-heartbeat"></i>por Eliana Kern</p>
+          <p>
+            Hecho con
+            <a href="https://imdb-api.com/"><i class="fab fa-imdb"></i></a> y
+            con <i class="fas fa-heartbeat"></i>por Eliana Kern
+          </p>
         </div>
         <div class="contacto-footer">
-          <p>Contactame</p> 
-          <a href="https://discord.com/invite/Eliana#3392" aria-label="discord"><i class="fab fa-discord"></i></a>
-          <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTNqLMpbkNnXLSSbfqWfxblhJnKvxGlXhdWrjqrFkPHqKBWNkFdsldcjcTHpxZSkVChGDV" aria-label="gmail"><i class="far fa-envelope"></i></a>
-          <a href="https://github.com/ElianaKern" aria-label="github"><i class="fab fa-github-alt"></i></a>
+          <p>Contactame</p>
+          <a href="https://discord.com/invite/Eliana#3392" aria-label="discord"
+            ><i class="fab fa-discord"></i
+          ></a>
+          <a
+            href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTNqLMpbkNnXLSSbfqWfxblhJnKvxGlXhdWrjqrFkPHqKBWNkFdsldcjcTHpxZSkVChGDV"
+            aria-label="gmail"
+            ><i class="far fa-envelope"></i
+          ></a>
+          <a href="https://github.com/ElianaKern" aria-label="github"
+            ><i class="fab fa-github-alt"></i
+          ></a>
         </div>
       </div>
     </footer>

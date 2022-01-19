@@ -1,14 +1,10 @@
 .descripcion-pelicula{
     display:"none";
     @include flexCentrado();
-    // background-image: url(../../img/tira-header.jpg);//mepa que va con comillas
-    // background-size: 35px 35px; ;
-    // background-repeat: no-repeat;
     width: 100%;
     margin-top: 20px;
     .container-descripcion-pelicula{
     @include flexCentrado();
-    };
     .container-img-pelicula{
         width: 500px;
         height: max-content;
@@ -52,7 +48,83 @@
             width: 480px;
             height: 300px;
         }
-
+    }
 };
 display:none;
 }
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////
+                RESPONSIVE                
+///////////////////////////////////////////////////////////////////////////////////////////////*/
+
+@media screen and (max-width: 1500px ) {
+    .descripcion-pelicula{
+    .container-descripcion-pelicula{
+        width: 80%;
+        .container-img-pelicula{
+            width: 80%;
+        }
+        .container-info-pelicula{
+            width: 100%;
+        }
+    }
+    }
+}
+@media screen and (max-width: 1200px ) {
+    .descripcion-pelicula{
+    .container-descripcion-pelicula{
+        width: 100%;
+        @include flexCentradoColumn;
+        .container-img-pelicula{
+            width: 60%;
+        }
+        .container-info-pelicula{
+            width: 90%;
+        }
+    }
+    }
+}
+@media screen and (max-width: 750px ) {
+    .descripcion-pelicula{
+    .container-descripcion-pelicula{
+        .container-info-pelicula{
+            .elenco{
+                margin-left: 300px;
+            }
+        }
+    }
+    }
+}
+@media screen and (max-width: 650px ) {
+    .descripcion-pelicula{
+    .container-descripcion-pelicula{
+         width: 100%;
+        .container-info-pelicula{
+            width: 90%;
+            h2{
+            font-size: 25px;
+            margin-bottom: 0px;
+            } 
+            .trailer{
+            margin-top:30px;
+            width: 280px;
+            height: 150px;
+            }
+          
+        }
+    }
+    }
+}
+@media screen and (max-width: 500px ) {
+    .descripcion-pelicula{
+    .container-descripcion-pelicula{
+        .container-info-pelicula{
+            .elenco{
+                margin-left: 140px;
+            }
+        }
+    }
+    }
+}
+
+

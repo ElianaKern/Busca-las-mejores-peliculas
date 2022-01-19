@@ -1,11 +1,13 @@
 .modo-claro{
     @include colorFondoBodyModoClaro();
     @include tipografiaYColorModoClaro();
+    .container-descripcion-pelicula{
     .container-info-pelicula .elenco{
         @include botonModoClaro();
     }
     .container-info-pelicula .salir-de-pelicula{
         @include botonModoClaro();
+    }
     }
     .elenco-pelicula .nombre-del-actor{
         @include tipografiaYColorModoClaro();

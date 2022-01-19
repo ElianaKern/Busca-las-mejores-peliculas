@@ -10,7 +10,7 @@ body {
   font-family: "Saira Condensed", sans-serif;
   color: #4d4949;
 }
-.modo-claro .container-info-pelicula .elenco {
+.modo-claro .container-descripcion-pelicula .container-info-pelicula .elenco {
   background-color: #c59595;
   box-shadow: rgba(158, 44, 44, 0.17) 0px -23px 25px 0px inset, rgba(158, 44, 44, 0.17) 0px -36px 30px 0px inset, rgba(158, 44, 44, 0.17) 0px -79px 40px 0px inset, rgba(158, 44, 44, 0.17) 0px 2px 1px, rgba(158, 44, 44, 0.17) 0px 4px 2px, rgba(158, 44, 44, 0.17) 0px 8px 4px, rgba(158, 44, 44, 0.17) 0px 16px 8px, rgba(158, 44, 44, 0.17) 0px 32px 16px;
   font-family: "Saira Condensed", sans-serif;
@@ -22,7 +22,7 @@ body {
   border: none;
   box-sizing: border-box;
 }
-.modo-claro .container-info-pelicula .salir-de-pelicula {
+.modo-claro .container-descripcion-pelicula .container-info-pelicula .salir-de-pelicula {
   background-color: #c59595;
   box-shadow: rgba(158, 44, 44, 0.17) 0px -23px 25px 0px inset, rgba(158, 44, 44, 0.17) 0px -36px 30px 0px inset, rgba(158, 44, 44, 0.17) 0px -79px 40px 0px inset, rgba(158, 44, 44, 0.17) 0px 2px 1px, rgba(158, 44, 44, 0.17) 0px 4px 2px, rgba(158, 44, 44, 0.17) 0px 8px 4px, rgba(158, 44, 44, 0.17) 0px 16px 8px, rgba(158, 44, 44, 0.17) 0px 32px 16px;
   font-family: "Saira Condensed", sans-serif;
@@ -192,19 +192,26 @@ header .img-claqueta-header, header .img-tira-header {
 header .img-tira-header:hover {
   transform: translateY(-20%);
 }
-header .img-claqueta-header {
+header .img-claqueta-header:hover {
   transform: translateX(5%);
 }
 
+/*///////////////////////////////////////////////////////////////////////////////////////////////
+                RESPONSIVE                
+///////////////////////////////////////////////////////////////////////////////////////////////*/
 @media screen and (max-width: 1200px) {
   .img-tira-header {
     display: none;
   }
 }
 @media screen and (max-width: 700px) {
-  .img-claqueta-header {
-    width: 100px;
-    height: 70px;
+  header .img-claqueta-header {
+    height: 180px;
+    transition: none;
+  }
+  header .titulo-principal {
+    font-size: 30px;
+    padding: 30px;
   }
 }
 nav {
@@ -233,17 +240,13 @@ nav input {
   border-bottom: 3px solid rgba(0, 0, 0, 0.63);
 }
 nav input::placeholder {
-  background-image: url(../../img/camara-negro.png);
+  background-image: url(../../img/camara-negro.jpg);
   background-size: 35px 35px;
   background-repeat: no-repeat;
   padding-left: 50px;
   color: #221f1f;
 }
 nav button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: rgba(12, 11, 11, 0.877);
   box-shadow: rgba(158, 44, 44, 0.17) 0px -23px 25px 0px inset, rgba(158, 44, 44, 0.17) 0px -36px 30px 0px inset, rgba(158, 44, 44, 0.17) 0px -79px 40px 0px inset, rgba(158, 44, 44, 0.17) 0px 2px 1px, rgba(158, 44, 44, 0.17) 0px 4px 2px, rgba(158, 44, 44, 0.17) 0px 8px 4px, rgba(158, 44, 44, 0.17) 0px 16px 8px, rgba(158, 44, 44, 0.17) 0px 32px 16px;
   font-family: "Saira Condensed", sans-serif;
@@ -271,6 +274,41 @@ nav select {
   border-bottom: 3px solid rgba(0, 0, 0, 0.63);
 }
 
+/*///////////////////////////////////////////////////////////////////////////////////////////////
+                RESPONSIVE                
+///////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 1200px) {
+  nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  nav button {
+    margin: 10px;
+    font-size: 20px;
+  }
+  nav label {
+    margin-top: 15px;
+    font-size: 25px;
+  }
+  nav select {
+    font-size: 15px;
+    margin: 0px;
+    width: 80%;
+  }
+  nav input {
+    font-size: 15px;
+    margin: 0px;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .modo-claro nav button {
+    font-size: 20px;
+  }
+}
 .salir-de-busqueda {
   width: 70%;
   display: flex;
@@ -297,6 +335,14 @@ nav select {
   transform: scale(0.9);
 }
 
+/*///////////////////////////////////////////////////////////////////////////////////////////////
+                RESPONSIVE                
+///////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 500px) {
+  .modo-claro .salir-de-busqueda button {
+    font-size: 20px;
+  }
+}
 .container-peliculas {
   display: none;
   display: flex;
@@ -336,6 +382,32 @@ nav select {
   line-height: 1;
 }
 
+/*///////////////////////////////////////////////////////////////////////////////////////////////
+                RESPONSIVE                
+///////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 1200px) {
+  .tarjeta {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .tarjeta {
+    width: 140px;
+  }
+
+  .titulo {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .tarjeta {
+    width: 110px;
+  }
+
+  .titulo {
+    font-size: 15px;
+  }
+}
 .descripcion-pelicula {
   display: "none";
   display: flex;
@@ -348,26 +420,26 @@ nav select {
   display: flex;
   justify-content: center;
 }
-.descripcion-pelicula .container-img-pelicula {
+.descripcion-pelicula .container-descripcion-pelicula .container-img-pelicula {
   width: 500px;
   height: max-content;
   background-color: transparent;
   box-shadow: #f37070 0px 4px 16px, #f37070 0px 8px 32px;
   margin: 40px;
 }
-.descripcion-pelicula .container-img-pelicula .img-descripcion-pelicula {
+.descripcion-pelicula .container-descripcion-pelicula .container-img-pelicula .img-descripcion-pelicula {
   width: 100%;
   height: auto;
   box-sizing: border-box;
 }
-.descripcion-pelicula .container-info-pelicula {
+.descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula {
   width: 500px;
 }
-.descripcion-pelicula .container-info-pelicula h2 {
+.descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula h2 {
   font-size: 35px;
   margin-bottom: 0px;
 }
-.descripcion-pelicula .container-info-pelicula button {
+.descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula button {
   background-color: rgba(12, 11, 11, 0.877);
   box-shadow: rgba(158, 44, 44, 0.17) 0px -23px 25px 0px inset, rgba(158, 44, 44, 0.17) 0px -36px 30px 0px inset, rgba(158, 44, 44, 0.17) 0px -79px 40px 0px inset, rgba(158, 44, 44, 0.17) 0px 2px 1px, rgba(158, 44, 44, 0.17) 0px 4px 2px, rgba(158, 44, 44, 0.17) 0px 8px 4px, rgba(158, 44, 44, 0.17) 0px 16px 8px, rgba(158, 44, 44, 0.17) 0px 32px 16px;
   font-family: "Saira Condensed", sans-serif;
@@ -381,27 +453,83 @@ nav select {
   margin: 8px;
   margin-top: 25px;
 }
-.descripcion-pelicula .container-info-pelicula button:hover p {
+.descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula button:hover p {
   transform: scale(0.9);
 }
-.descripcion-pelicula .container-info-pelicula p {
+.descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula p {
   margin: 0px;
   font-size: 20px;
   font-weight: bold;
   line-height: 1.3;
 }
-.descripcion-pelicula .container-info-pelicula span {
+.descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula span {
   margin: 0px;
   margin-left: 8px;
   font-size: 20px;
   font-weight: 100;
 }
-.descripcion-pelicula .container-info-pelicula .trailer {
+.descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula .trailer {
   margin-top: 30px;
   width: 480px;
   height: 300px;
 }
 
+/*///////////////////////////////////////////////////////////////////////////////////////////////
+                RESPONSIVE                
+///////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 1500px) {
+  .descripcion-pelicula .container-descripcion-pelicula {
+    width: 80%;
+  }
+  .descripcion-pelicula .container-descripcion-pelicula .container-img-pelicula {
+    width: 80%;
+  }
+  .descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .descripcion-pelicula .container-descripcion-pelicula {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .descripcion-pelicula .container-descripcion-pelicula .container-img-pelicula {
+    width: 60%;
+  }
+  .descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula .elenco {
+    margin-left: 300px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .descripcion-pelicula .container-descripcion-pelicula {
+    width: 100%;
+  }
+  .descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula {
+    width: 90%;
+  }
+  .descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula h2 {
+    font-size: 25px;
+    margin-bottom: 0px;
+  }
+  .descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula .trailer {
+    margin-top: 30px;
+    width: 280px;
+    height: 150px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula .elenco {
+    margin-left: 140px;
+  }
+}
 .elenco-pelicula {
   display: flex;
   justify-content: center;
@@ -460,6 +588,35 @@ nav select {
   transform: scale(0.9);
 }
 
+/*///////////////////////////////////////////////////////////////////////////////////////////////
+                RESPONSIVE                
+///////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 1100px) {
+  .elenco-pelicula {
+    margin: 0px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .elenco-pelicula {
+    margin: 0px;
+  }
+  .elenco-pelicula .foto-del-actor {
+    width: 60px;
+    height: 150px;
+  }
+  .elenco-pelicula .nombre-del-actor {
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+  .elenco-pelicula .nombre-del-personaje {
+    font-size: 15px;
+  }
+
+  .volver-de-elenco .volver p {
+    font-size: 15px;
+  }
+}
 .paginado {
   display: flex;
   justify-content: center;
@@ -487,7 +644,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../../img/img-fondo-footer.png);
+  background-image: url(../../img/img-fondo-footer.jpg);
   background-repeat: no-repeat;
   background-position: right top;
   background-size: cover;
@@ -534,6 +691,9 @@ footer .contacto-footer .fa-heartbeat, footer .ico-footer .fa-heartbeat {
   margin: 10px;
 }
 
+/*///////////////////////////////////////////////////////////////////////////////////////////////
+                RESPONSIVE                
+///////////////////////////////////////////////////////////////////////////////////////////////*/
 @media screen and (max-width: 1200px) {
   footer {
     height: 350px;
@@ -550,6 +710,22 @@ footer .contacto-footer .fa-heartbeat, footer .ico-footer .fa-heartbeat {
   .contacto-footer, .ico-footer {
     margin: 0px;
     padding: 2px;
+  }
+}
+@media screen and (max-width: 500px) {
+  footer .contacto-footer, footer .ico-footer {
+    display: block;
+    margin: 5px;
+  }
+  footer .contacto-footer i, footer .ico-footer i {
+    font-size: 20px;
+  }
+  footer .contacto-footer .fa-heartbeat, footer .contacto-footer .fa-imdb, footer .ico-footer .fa-heartbeat, footer .ico-footer .fa-imdb {
+    font-size: 30px;
+    margin: 3px;
+  }
+  footer .contacto-footer p, footer .ico-footer p {
+    font-size: 15px;
   }
 }
 
