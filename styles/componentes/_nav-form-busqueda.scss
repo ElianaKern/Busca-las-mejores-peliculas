@@ -14,13 +14,14 @@ nav {
     @include input();
   }
   input::placeholder {
-    background-image: url(../../img/camara-negro.jpg);
+    background-image: url("../img/camara-negro.jpg");
     background-size: 35px 35px;
     background-repeat: no-repeat;
     padding-left: 50px;
     color: rgb(34, 31, 31);
   }
   button {
+    @include flexCentradoColumn();
     @include boton();
     margin-right: 15px;
   }
