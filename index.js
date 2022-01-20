@@ -5,7 +5,7 @@
  k_w0x9nsxv , k_pk8lnjxj , k_58z780e4 ,  k_rcjxz3o6 , k_mmzma8jv , 
  k_sexpb7mq ,  k_ruh05m8g , k_j12bhuve 
 //////////////////////////////////////////////////////////////////////////////*/
-const API_KEY = 'k_ddwodv5z';
+const API_KEY = 'k_pk8lnjxj';
 
 // Body //
 const body = document.querySelector("body");
@@ -172,7 +172,7 @@ botonPaginaAnterior.onclick = () => {
     iconoPaginaAnterior.style.color = "rgb(85, 80, 80)";
     prev.disabled = true
   };
-  paginaActual = paginaActual-18
+  paginaActual = paginaActual - 18
   traerPeliculas();  
 }
 botonPaginaPosterior.onclick = () =>{

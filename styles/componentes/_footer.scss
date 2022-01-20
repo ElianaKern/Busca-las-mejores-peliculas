@@ -4,7 +4,7 @@ footer{
        display: flex;
        position: relative;  
     }
-    background-image: url(../../img/img-fondo-footer.jpg);
+    background-image: url("../img/img-fondo-footer.jpg");
     background-repeat: no-repeat;
     background-position: right top;
     background-size: cover;
@@ -71,7 +71,7 @@ footer{
        }
     .fa-heartbeat, .fa-imdb{
        font-size: 30px;
-       margin:3px;
+       margin:5px;
     }
     p{
         font-size: 15px;
