@@ -51,7 +51,7 @@ ___
 <p><img src="https://media.giphy.com/media/3ohs7SYe1SH9oeqDaE/giphy.gif" width="1000px" height="30px"/></p>
 
 
-***Mi idea en un principio fue hacer un buscador que solo contenga las películas mas importantes de culto de la historia del cine, no encontré una api que me lo brindara, pero esta fue lo mas parecido a lo que quería, así que estoy contenta por eso. Aunque investigaré mas y quedará como proyecto a futuro.***
+***Mi idea en un principio fue hacer un buscador que solo contenga las películas mas importantes de culto y obras maestras de la historia del cine, no encontré una api que me lo brindara, pero esta fue lo mas parecido a lo que quería, así que estoy contenta por eso. Aunque investigaré mas y quedará como proyecto a futuro.***
 
 ___
 
