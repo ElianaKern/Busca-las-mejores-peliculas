@@ -536,14 +536,14 @@ nav select {
   .descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula .trailer {
     margin-top: 30px;
     width: 350px;
-    height: 200px;
+    height: 220px;
   }
 }
 @media screen and (max-width: 380px) {
   .descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula .trailer {
     margin-top: 30px;
     width: 280px;
-    height: 150px;
+    height: 170px;
   }
 }
 .elenco-pelicula {
