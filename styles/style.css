@@ -536,7 +536,7 @@ nav select {
   .descripcion-pelicula .container-descripcion-pelicula .container-info-pelicula .trailer {
     margin-top: 30px;
     width: 350px;
-    height: 220px;
+    height: 260px;
   }
 }
 @media screen and (max-width: 380px) {
