@@ -61,11 +61,20 @@ footer{
         padding: 2px;
     }
 }
-@media screen and(max-width : 500px){
+@media screen and(max-width : 750px){
    footer{
+        height: 600px;
+        justify-content: flex-end;
+     .fondo-footer{
+        justify-content: flex-end;
+        flex-direction: column-reverse;
+        margin-top: 160px;
+        
+    }
     .contacto-footer, .ico-footer {
         display: block;
-       margin: 5px;
+        margin: 8px;
+        margin-right: 50px;
        i{
         font-size: 20px;
        }
@@ -74,7 +83,7 @@ footer{
        margin:5px;
     }
     p{
-        font-size: 15px;
+        font-size: 16px;
     }
    }
    }
