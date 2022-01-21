@@ -42,7 +42,7 @@
   .elenco-pelicula{
     margin:0px;
     .foto-del-actor{
-        width: 60px;
+        width: 90px;
         height: 150px;
     }
     .nombre-del-actor{
@@ -56,5 +56,13 @@
     }
  .volver-de-elenco .volver p{
     font-size: 15px;
+}
+}
+
+@media screen and (max-width: 380px ) {
+  .elenco-pelicula{
+    .foto-del-actor{
+        width: 60px;
+  }
 }
 }

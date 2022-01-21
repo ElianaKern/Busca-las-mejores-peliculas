@@ -396,14 +396,14 @@ nav select {
 }
 @media screen and (max-width: 500px) {
   .tarjeta {
-    width: 140px;
+    width: 150px;
   }
 
   .titulo {
     font-size: 20px;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 392px) {
   .tarjeta {
     width: 110px;
   }
@@ -617,7 +617,7 @@ nav select {
     margin: 0px;
   }
   .elenco-pelicula .foto-del-actor {
-    width: 60px;
+    width: 90px;
     height: 150px;
   }
   .elenco-pelicula .nombre-del-actor {
@@ -631,6 +631,11 @@ nav select {
 
   .volver-de-elenco .volver p {
     font-size: 15px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .elenco-pelicula .foto-del-actor {
+    width: 60px;
   }
 }
 .paginado {
@@ -728,10 +733,20 @@ footer .contacto-footer .fa-heartbeat, footer .ico-footer .fa-heartbeat {
     padding: 2px;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
+  footer {
+    height: 600px;
+    justify-content: flex-end;
+  }
+  footer .fondo-footer {
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+    margin-top: 160px;
+  }
   footer .contacto-footer, footer .ico-footer {
     display: block;
-    margin: 5px;
+    margin: 8px;
+    margin-right: 50px;
   }
   footer .contacto-footer i, footer .ico-footer i {
     font-size: 20px;
@@ -741,7 +756,7 @@ footer .contacto-footer .fa-heartbeat, footer .ico-footer .fa-heartbeat {
     margin: 5px;
   }
   footer .contacto-footer p, footer .ico-footer p {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
