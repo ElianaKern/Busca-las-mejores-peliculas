@@ -18,6 +18,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- Favicon -->
+    <!-- favicon.ico, en minusculas, seria el nombre correcto -->
     <link rel="icon" type="image/ico" href="FAVICON.ico" />
     <title>The Best Movies</title>
   </head>
@@ -25,8 +26,13 @@
     <!-- Header con titulo principal e imagenes-->
     <header>
       <div class="container-titulo-principal">
+        <!-- Al hacer click aqui se pone el modo claro, pero no hay ninguna indicacion para el usuario, 
+        ni tampoco para el usuario con lector de pantalla.
+        Recordá que uno de los principios de la accesibilidad es reducir la carga cognitiva del usuario:
+        todas las acciones deben estar claramente señaladas  -->
         <h1 class="titulo-principal">The Best Movies</h1>
         <div class="imagenes-del-header">
+          <!-- No es necesario aclarar "imagen de" en el alt -->
           <img src="img/claqueta-cine.jpg" alt="imagen claqueta cine" class="img-claqueta-header"/>
           <img src="img/tira-header.jpg" alt="imagen tira negativo" class="img-tira-header"/>
         </div>
@@ -49,6 +55,8 @@
       <div class="container-peliculas"></div>
       <!-- Paginado -->
       <section class="paginado">
+        <!-- Estos botones necesitan un aria label para que el usuario que depende del lector de pantalla
+        sepa lo que hacen -->
         <button class="button-pagina-inicial">
           <i class="fas fa-angle-double-left"></i>
         </button>
@@ -64,6 +72,7 @@
       </section>
       <!-- Boton para salir de resultado de tarjetas de busqueda -->
       <div class="salir-de-busqueda">
+        <!-- No es necesario agregar un p dentro del boton -->
         <button class="salir"><p>Salir</p></button>
       </div>
       <!--Seccion descripcion pelicula -->
@@ -100,6 +109,7 @@
         <div class="ico-footer">
           <p>
             Hecho con
+            <!-- los links que solo tienen un icono dentro necesitan un aria label  -->
             <a href="https://imdb-api.com/"><i class="fab fa-imdb"></i></a> y
             con <i class="fas fa-heartbeat"></i>por Eliana Kern
           </p>

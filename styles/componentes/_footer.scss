@@ -13,6 +13,7 @@ footer{
     .contacto-footer, .ico-footer {
         @include flexItemsCentrado;
         @include colorFondosPrincipal;
+// corregi el tabulado aca, esta muy dificil de leer
         margin: 15px;
         padding: 5px;
         font-size: 18px;
