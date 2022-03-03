@@ -1,6 +1,19 @@
 .modo-claro{
+    
     @include colorFondoBodyModoClaro();
     @include tipografiaYColorModoClaro();
+    // aca deberias haber aprovechado mejor el anidado, por ejemplo:
+    // .container-descripcion-pelicula {
+    //     .container-info-pelicula {
+    //       .elenco {
+    //         @include botonModoClaro();
+    //       }
+    //       .salir-de-pelicula {
+    //         @include botonModoClaro();
+    //       }
+    //     }
+    //   }
+
     .container-descripcion-pelicula{
     .container-info-pelicula .elenco{
         @include botonModoClaro();

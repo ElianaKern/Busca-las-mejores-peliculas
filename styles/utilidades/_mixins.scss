@@ -1,3 +1,6 @@
+// en css y sass preferimos usar guiones en los nombres de las funciones 
+// en lugar de camelCase 
+
 @mixin colorFondosPrincipal() {
     background-color: $background-color-principal-modo-oscuro;
     box-shadow: $box-shadow
@@ -15,6 +18,7 @@
     box-shadow: $box-shadow
 }
 
+// seria mejor que aprovecharas los params de los mixins para no repetir tanto estas funciones
 @mixin flexCentradoColumn () {
     display: flex;
     flex-direction: column;
@@ -50,6 +54,7 @@
     border: none;
     box-sizing: border-box;
 }
+// mismo aqui, podrias haber usado params y un solo mixin en lugar de dos 
 @mixin botonModoClaro() {
     @include colorFondosPrincipalModoClaro();
     @include tipografiaYColorModoClaro();
@@ -74,6 +79,7 @@
     width: 70%;
     display: flex;
     justify-content: flex-end;
+    // esta mal el tabulado aca, ojo, es super importante en sass 
     button{
     @include boton(); 
     margin-top:50px; 

@@ -1,9 +1,11 @@
 .descripcion-pelicula{
+    // no se usan comillas
     display:"none";
     @include flexCentrado();
     width: 100%;
     margin-top: 20px;
     .container-descripcion-pelicula{
+        // esto deberia ir un tab mas adentro, ya que esta dentro de .container-descripcion-pelicula
     @include flexCentrado();
     .container-img-pelicula{
         width: 500px;
@@ -50,6 +52,7 @@
         }
     }
 };
+// repetido
 display:none;
 }
 
@@ -57,6 +60,7 @@ display:none;
                 RESPONSIVE                
 ///////////////////////////////////////////////////////////////////////////////////////////////*/
 
+// corregi el tabulado en cada media query
 @media screen and (max-width: 1500px ) {
     .descripcion-pelicula{
     .container-descripcion-pelicula{

@@ -11,6 +11,7 @@ const API_KEY = 'k_m9iw5lkn';
 const body = document.querySelector("body");
 
 // Header //
+// esta variable nunca se usa 
 const imagenesDelHeader = document.querySelector('.imagenes-del-header');
 const h1 = document.querySelector("h1")
 
@@ -21,6 +22,7 @@ const selectSort = document.getElementById("select-sort");
 
 // Seccion Principal //
 const contenedorPeliculas = document.querySelector('.container-peliculas'); 
+// esta variable nunca se usa
 const salirDeBusqueda = document.querySelector('.salir-de-busqueda');
 const botonSalir = document.querySelector('.salir');
 
@@ -50,6 +52,7 @@ const premios = document.querySelector('.premios')
 const elenco = document.querySelector(".elenco")
 const elencoPelicula = document.querySelector(".elenco-pelicula") 
 const salirDePelicula = document.querySelector(".salir-de-pelicula")
+// esta variable nunca se usa 
 const volverDeElenco = document.querySelector('.volver-de-elenco')
 const trailer = document.querySelector('.trailer')
 
@@ -70,6 +73,9 @@ const traerPeliculas = () => {
       
     });
 };
+
+// las funciones que se ejecutan apenas carga la pagina deben ir todas al final del js, 
+// para que quede claro el flujo de ejecucion
 traerPeliculas();
 
 /// Fetch para Buscar Pelicula especifica ///
@@ -83,6 +89,8 @@ const buscarPeliculas = () => {
       entrarAPelicula();
     });
 };
+
+// no hay default que prevenir en el click de un boton
 botonBuscador.onclick = (event) => {
   event.preventDefault()
   buscarPeliculas()
@@ -111,10 +119,16 @@ const crearTarjetasBusqueda = (data) => {
 };
 
 /// Ordenar de A-Z , de Z-A y al Azar ///
+// aprovecha el retorno implicito siempre que puedas
+// selectSort.onchange = () => traerPeliculas();
 selectSort.onchange = () =>{
   traerPeliculas();
 }
 const sort = (data,valueUsuario) =>{
+  // mas prolijidad con el codigo, dejá los espacios necesarios para que leer sea mas facil
+  // pensalo como en un texto, siempre dejas espacio antes de un parentesis, despues de un punto. 
+  // es lo mismo en javascript
+  // if (valueUsuario === "a-z") {
   if(valueUsuario === "a-z"){
     const aZ = data.items.sort((a, b) => {
       if (a.title.toLowerCase() < b.title.toLowerCase()) {
@@ -170,6 +184,7 @@ botonPaginaInicial.onclick = () => {
 botonPaginaAnterior.onclick = () => {
   if (paginaActual === 0) {
     iconoPaginaAnterior.style.color = "rgb(85, 80, 80)";
+    // No hay ningun elemento llamado prev!
     prev.disabled = true
   };
   paginaActual = paginaActual - 18
@@ -178,6 +193,7 @@ botonPaginaAnterior.onclick = () => {
 botonPaginaPosterior.onclick = () =>{
   if (paginaActual === 240) {
     iconoPaginaPosterior.style.color = 'rgb(85, 80, 80)';
+    // No hay ningun elemento llamado prev!
     prev.disabled = true
   }
   paginaActual = paginaActual + 18
@@ -193,6 +209,7 @@ const entrarAPelicula = () => {
   const tarjetas = document.querySelectorAll('.tarjeta');
   for (let i = 0; i < tarjetas.length; i++) {
     tarjetas[i].onclick = () => {
+      // const id, nunca cambia, no deberia ser let
       let id = tarjetas[i].dataset.id;
       llamadoParaMostrarPelicula(id);
   
